@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Laundry_Service_Management
@@ -16,7 +13,7 @@ namespace Laundry_Service_Management
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new AuthPage());
+            Application.Run(new DesignTemplate());
         }
     }
 }

@@ -61,8 +61,43 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddServicePage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddServicePage.Designer.cs">
+      <DependentUpon>AddServicePage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BookingsPage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BookingsPage.Designer.cs">
+      <DependentUpon>BookingsPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DesignTemplate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DesignTemplate.Designer.cs">
+      <DependentUpon>DesignTemplate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Helper.cs" />
+    <Compile Include="LaundryServiceManagementDbDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LaundryServiceManagementDbDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="models\Booking.cs" />
+    <Compile Include="models\Service.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AddServicePage.resx">
+      <DependentUpon>AddServicePage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BookingsPage.resx">
+      <DependentUpon>BookingsPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DesignTemplate.resx">
+      <DependentUpon>DesignTemplate.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -71,7 +106,19 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="LaundryServiceManagementDbDataSet.xsc">
+      <DependentUpon>LaundryServiceManagementDbDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="LaundryServiceManagementDbDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>LaundryServiceManagementDbDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="LaundryServiceManagementDbDataSet.xss">
+      <DependentUpon>LaundryServiceManagementDbDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -93,6 +140,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>LaundryServiceManagementDb.mdf</DependentUpon>
     </Content>
+    <None Include="Resources\Screenshot_2026-06-05_160612-removebg-preview.png" />
+    <None Include="Resources\Screenshot 2026-06-05 160612.png" />
+    <None Include="Resources\washing Machine.jpg" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.8">

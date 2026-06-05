@@ -10,6 +10,6 @@ C:\Users\User\Desktop\UTeM\Sem 4\Event-Driven Programming\Project\Laundry Servic
 C:\Users\User\Desktop\UTeM\Sem 4\Event-Driven Programming\Project\Laundry Service Management\Laundry Service Management\obj\Debug\Laundry Service Management.exe
 C:\Users\User\Desktop\UTeM\Sem 4\Event-Driven Programming\Project\Laundry Service Management\Laundry Service Management\obj\Debug\Laundry Service Management.pdb
 C:\Users\User\Desktop\UTeM\Sem 4\Event-Driven Programming\Project\Laundry Service Management\Laundry Service Management\obj\Debug\Laundry Service Management.exe.config
-C:\Users\User\Desktop\UTeM\Sem 4\Event-Driven Programming\Project\Laundry Service Management\Laundry Service Management\obj\Debug\Laundry_Service_Management.ServicesPage.resources
-C:\Users\User\Desktop\UTeM\Sem 4\Event-Driven Programming\Project\Laundry Service Management\Laundry Service Management\obj\Debug\Laundry_Service_Management.AuthPage.resources
 C:\Users\User\Desktop\UTeM\Sem 4\Event-Driven Programming\Project\Laundry Service Management\Laundry Service Management\obj\Debug\Laundry_Service_Management.AddServicePage.resources
+C:\Users\User\Desktop\UTeM\Sem 4\Event-Driven Programming\Project\Laundry Service Management\Laundry Service Management\obj\Debug\Laundry_Service_Management.DesignTemplate.resources
+C:\Users\User\Desktop\UTeM\Sem 4\Event-Driven Programming\Project\Laundry Service Management\Laundry Service Management\obj\Debug\Laundry_Service_Management.BookingsPage.resources
