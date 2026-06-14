@@ -12,7 +12,11 @@ namespace Laundry_Service_Management
 
         private void DesignTemplate_Load(object sender, EventArgs e)
         {
-            if (this.DesignMode) return;
+            if (Helper.UserRole != "Admin")
+            {
+                treeView1.Nodes.RemoveByKey("Dashboard");
+                treeView1.Nodes.RemoveByKey("Staff Management");
+            }
         }
 
         private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
@@ -21,6 +25,9 @@ namespace Laundry_Service_Management
 
             switch (e.Node.Text)
             {
+                case "Dashboard":
+                    mainContentPnl.Controls.Add(new Dashboard());
+                    break;
                 case "Booking":
                     mainContentPnl.Controls.Add(new BookingsPage());
                     break;

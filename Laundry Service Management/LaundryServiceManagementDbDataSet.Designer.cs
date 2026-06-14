@@ -443,6 +443,8 @@ namespace Laundry_Service_Management {
             
             private global::System.Data.DataColumn columnservice_type;
             
+            private global::System.Data.DataColumn columnstatus;
+            
             private global::System.Data.DataColumn columnuser_id;
             
             private global::System.Data.DataColumn columnpayment_id;
@@ -525,6 +527,14 @@ namespace Laundry_Service_Management {
             public global::System.Data.DataColumn service_typeColumn {
                 get {
                     return this.columnservice_type;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn statusColumn {
+                get {
+                    return this.columnstatus;
                 }
             }
             
@@ -613,7 +623,7 @@ namespace Laundry_Service_Management {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public BookingsRow AddBookingsRow(System.DateTime booking_date, System.DateTime service_time, decimal total_amount, string service_type, UsersRow parentUsersRowByFK_Bookings_ToUsers, PaymentsRow parentPaymentsRowByFK_Bookings_ToPayments, string delivery_from_shop_method, string delivery_address, string remarks, string delivery_to_shop_method) {
+            public BookingsRow AddBookingsRow(System.DateTime booking_date, System.DateTime service_time, decimal total_amount, string service_type, string status, UsersRow parentUsersRowByFK_Bookings_ToUsers, PaymentsRow parentPaymentsRowByFK_Bookings_ToPayments, string delivery_from_shop_method, string delivery_address, string remarks, string delivery_to_shop_method) {
                 BookingsRow rowBookingsRow = ((BookingsRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -621,6 +631,7 @@ namespace Laundry_Service_Management {
                         service_time,
                         total_amount,
                         service_type,
+                        status,
                         null,
                         null,
                         delivery_from_shop_method,
@@ -628,10 +639,10 @@ namespace Laundry_Service_Management {
                         remarks,
                         delivery_to_shop_method};
                 if ((parentUsersRowByFK_Bookings_ToUsers != null)) {
-                    columnValuesArray[5] = parentUsersRowByFK_Bookings_ToUsers[0];
+                    columnValuesArray[6] = parentUsersRowByFK_Bookings_ToUsers[0];
                 }
                 if ((parentPaymentsRowByFK_Bookings_ToPayments != null)) {
-                    columnValuesArray[6] = parentPaymentsRowByFK_Bookings_ToPayments[0];
+                    columnValuesArray[7] = parentPaymentsRowByFK_Bookings_ToPayments[0];
                 }
                 rowBookingsRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowBookingsRow);
@@ -667,6 +678,7 @@ namespace Laundry_Service_Management {
                 this.columnservice_time = base.Columns["service_time"];
                 this.columntotal_amount = base.Columns["total_amount"];
                 this.columnservice_type = base.Columns["service_type"];
+                this.columnstatus = base.Columns["status"];
                 this.columnuser_id = base.Columns["user_id"];
                 this.columnpayment_id = base.Columns["payment_id"];
                 this.columndelivery_from_shop_method = base.Columns["delivery_from_shop_method"];
@@ -688,6 +700,8 @@ namespace Laundry_Service_Management {
                 base.Columns.Add(this.columntotal_amount);
                 this.columnservice_type = new global::System.Data.DataColumn("service_type", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnservice_type);
+                this.columnstatus = new global::System.Data.DataColumn("status", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnstatus);
                 this.columnuser_id = new global::System.Data.DataColumn("user_id", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnuser_id);
                 this.columnpayment_id = new global::System.Data.DataColumn("payment_id", typeof(decimal), null, global::System.Data.MappingType.Element);
@@ -713,6 +727,8 @@ namespace Laundry_Service_Management {
                 this.columntotal_amount.AllowDBNull = false;
                 this.columnservice_type.AllowDBNull = false;
                 this.columnservice_type.MaxLength = 2147483647;
+                this.columnstatus.AllowDBNull = false;
+                this.columnstatus.MaxLength = 2147483647;
                 this.columnuser_id.AllowDBNull = false;
                 this.columndelivery_from_shop_method.AllowDBNull = false;
                 this.columndelivery_from_shop_method.MaxLength = 2147483647;
@@ -1796,11 +1812,15 @@ namespace Laundry_Service_Management {
             
             private global::System.Data.DataColumn columnname;
             
+            private global::System.Data.DataColumn columngender;
+            
             private global::System.Data.DataColumn columnphone_no;
+            
+            private global::System.Data.DataColumn columnpassword;
             
             private global::System.Data.DataColumn columnrole;
             
-            private global::System.Data.DataColumn columnpassword;
+            private global::System.Data.DataColumn columnjoin_date;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
@@ -1853,9 +1873,25 @@ namespace Laundry_Service_Management {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn genderColumn {
+                get {
+                    return this.columngender;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public global::System.Data.DataColumn phone_noColumn {
                 get {
                     return this.columnphone_no;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn passwordColumn {
+                get {
+                    return this.columnpassword;
                 }
             }
             
@@ -1869,9 +1905,9 @@ namespace Laundry_Service_Management {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn passwordColumn {
+            public global::System.Data.DataColumn join_dateColumn {
                 get {
-                    return this.columnpassword;
+                    return this.columnjoin_date;
                 }
             }
             
@@ -1912,14 +1948,16 @@ namespace Laundry_Service_Management {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public UsersRow AddUsersRow(string name, string phone_no, string role, string password) {
+            public UsersRow AddUsersRow(string name, string gender, string phone_no, string password, string role, System.DateTime join_date) {
                 UsersRow rowUsersRow = ((UsersRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         name,
+                        gender,
                         phone_no,
+                        password,
                         role,
-                        password};
+                        join_date};
                 rowUsersRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowUsersRow);
                 return rowUsersRow;
@@ -1951,9 +1989,11 @@ namespace Laundry_Service_Management {
             internal void InitVars() {
                 this.columnuser_id = base.Columns["user_id"];
                 this.columnname = base.Columns["name"];
+                this.columngender = base.Columns["gender"];
                 this.columnphone_no = base.Columns["phone_no"];
-                this.columnrole = base.Columns["role"];
                 this.columnpassword = base.Columns["password"];
+                this.columnrole = base.Columns["role"];
+                this.columnjoin_date = base.Columns["join_date"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1963,12 +2003,16 @@ namespace Laundry_Service_Management {
                 base.Columns.Add(this.columnuser_id);
                 this.columnname = new global::System.Data.DataColumn("name", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnname);
+                this.columngender = new global::System.Data.DataColumn("gender", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columngender);
                 this.columnphone_no = new global::System.Data.DataColumn("phone_no", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnphone_no);
-                this.columnrole = new global::System.Data.DataColumn("role", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnrole);
                 this.columnpassword = new global::System.Data.DataColumn("password", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnpassword);
+                this.columnrole = new global::System.Data.DataColumn("role", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnrole);
+                this.columnjoin_date = new global::System.Data.DataColumn("join_date", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnjoin_date);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnuser_id}, true));
                 this.columnuser_id.AutoIncrement = true;
@@ -1979,12 +2023,14 @@ namespace Laundry_Service_Management {
                 this.columnuser_id.Unique = true;
                 this.columnname.AllowDBNull = false;
                 this.columnname.MaxLength = 255;
+                this.columngender.AllowDBNull = false;
+                this.columngender.MaxLength = 1;
                 this.columnphone_no.AllowDBNull = false;
                 this.columnphone_no.MaxLength = 255;
-                this.columnrole.AllowDBNull = false;
-                this.columnrole.MaxLength = 255;
                 this.columnpassword.AllowDBNull = false;
                 this.columnpassword.MaxLength = 255;
+                this.columnrole.AllowDBNull = false;
+                this.columnrole.MaxLength = 255;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2177,6 +2223,17 @@ namespace Laundry_Service_Management {
                 }
                 set {
                     this[this.tableBookings.service_typeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string status {
+                get {
+                    return ((string)(this[this.tableBookings.statusColumn]));
+                }
+                set {
+                    this[this.tableBookings.statusColumn] = value;
                 }
             }
             
@@ -2574,12 +2631,34 @@ namespace Laundry_Service_Management {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string gender {
+                get {
+                    return ((string)(this[this.tableUsers.genderColumn]));
+                }
+                set {
+                    this[this.tableUsers.genderColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public string phone_no {
                 get {
                     return ((string)(this[this.tableUsers.phone_noColumn]));
                 }
                 set {
                     this[this.tableUsers.phone_noColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string password {
+                get {
+                    return ((string)(this[this.tableUsers.passwordColumn]));
+                }
+                set {
+                    this[this.tableUsers.passwordColumn] = value;
                 }
             }
             
@@ -2596,13 +2675,30 @@ namespace Laundry_Service_Management {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string password {
+            public System.DateTime join_date {
                 get {
-                    return ((string)(this[this.tableUsers.passwordColumn]));
+                    try {
+                        return ((global::System.DateTime)(this[this.tableUsers.join_dateColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'join_date\' in table \'Users\' is DBNull.", e);
+                    }
                 }
                 set {
-                    this[this.tableUsers.passwordColumn] = value;
+                    this[this.tableUsers.join_dateColumn] = value;
                 }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool Isjoin_dateNull() {
+                return this.IsNull(this.tableUsers.join_dateColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void Setjoin_dateNull() {
+                this[this.tableUsers.join_dateColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2917,6 +3013,7 @@ namespace Laundry_Service_Management.LaundryServiceManagementDbDataSetTableAdapt
             tableMapping.ColumnMappings.Add("service_time", "service_time");
             tableMapping.ColumnMappings.Add("total_amount", "total_amount");
             tableMapping.ColumnMappings.Add("service_type", "service_type");
+            tableMapping.ColumnMappings.Add("status", "status");
             tableMapping.ColumnMappings.Add("user_id", "user_id");
             tableMapping.ColumnMappings.Add("payment_id", "payment_id");
             tableMapping.ColumnMappings.Add("delivery_from_shop_method", "delivery_from_shop_method");
@@ -2937,13 +3034,14 @@ namespace Laundry_Service_Management.LaundryServiceManagementDbDataSetTableAdapt
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_payment_id", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "payment_id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[Bookings] ([booking_date], [service_time], [total_amount], [service_type], [user_id], [payment_id], [delivery_from_shop_method], [delivery_address], [remarks], [delivery_to_shop_method]) VALUES (@booking_date, @service_time, @total_amount, @service_type, @user_id, @payment_id, @delivery_from_shop_method, @delivery_address, @remarks, @delivery_to_shop_method);
-SELECT booking_id, booking_date, service_time, total_amount, service_type, user_id, payment_id, delivery_from_shop_method, delivery_address, remarks, delivery_to_shop_method FROM Bookings WHERE (booking_id = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[Bookings] ([booking_date], [service_time], [total_amount], [service_type], [status], [user_id], [payment_id], [delivery_from_shop_method], [delivery_address], [remarks], [delivery_to_shop_method]) VALUES (@booking_date, @service_time, @total_amount, @service_type, @status, @user_id, @payment_id, @delivery_from_shop_method, @delivery_address, @remarks, @delivery_to_shop_method);
+SELECT booking_id, booking_date, service_time, total_amount, service_type, status, user_id, payment_id, delivery_from_shop_method, delivery_address, remarks, delivery_to_shop_method FROM Bookings WHERE (booking_id = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@booking_date", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "booking_date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@service_time", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "service_time", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@total_amount", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 2, "total_amount", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@service_type", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "service_type", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@status", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "status", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@user_id", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "user_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@payment_id", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "payment_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@delivery_from_shop_method", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "delivery_from_shop_method", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -2952,13 +3050,14 @@ SELECT booking_id, booking_date, service_time, total_amount, service_type, user_
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@delivery_to_shop_method", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "delivery_to_shop_method", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Bookings] SET [booking_date] = @booking_date, [service_time] = @service_time, [total_amount] = @total_amount, [service_type] = @service_type, [user_id] = @user_id, [payment_id] = @payment_id, [delivery_from_shop_method] = @delivery_from_shop_method, [delivery_address] = @delivery_address, [remarks] = @remarks, [delivery_to_shop_method] = @delivery_to_shop_method WHERE (([booking_id] = @Original_booking_id) AND ([booking_date] = @Original_booking_date) AND ([service_time] = @Original_service_time) AND ([total_amount] = @Original_total_amount) AND ([user_id] = @Original_user_id) AND ((@IsNull_payment_id = 1 AND [payment_id] IS NULL) OR ([payment_id] = @Original_payment_id)));
-SELECT booking_id, booking_date, service_time, total_amount, service_type, user_id, payment_id, delivery_from_shop_method, delivery_address, remarks, delivery_to_shop_method FROM Bookings WHERE (booking_id = @booking_id)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Bookings] SET [booking_date] = @booking_date, [service_time] = @service_time, [total_amount] = @total_amount, [service_type] = @service_type, [status] = @status, [user_id] = @user_id, [payment_id] = @payment_id, [delivery_from_shop_method] = @delivery_from_shop_method, [delivery_address] = @delivery_address, [remarks] = @remarks, [delivery_to_shop_method] = @delivery_to_shop_method WHERE (([booking_id] = @Original_booking_id) AND ([booking_date] = @Original_booking_date) AND ([service_time] = @Original_service_time) AND ([total_amount] = @Original_total_amount) AND ([user_id] = @Original_user_id) AND ((@IsNull_payment_id = 1 AND [payment_id] IS NULL) OR ([payment_id] = @Original_payment_id)));
+SELECT booking_id, booking_date, service_time, total_amount, service_type, status, user_id, payment_id, delivery_from_shop_method, delivery_address, remarks, delivery_to_shop_method FROM Bookings WHERE (booking_id = @booking_id)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@booking_date", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "booking_date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@service_time", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "service_time", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@total_amount", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 2, "total_amount", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@service_type", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "service_type", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@status", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "status", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@user_id", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "user_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@payment_id", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "payment_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@delivery_from_shop_method", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "delivery_from_shop_method", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -2988,9 +3087,9 @@ SELECT booking_id, booking_date, service_time, total_amount, service_type, user_
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT booking_id, booking_date, service_time, total_amount, service_type, user_i" +
-                "d, payment_id, delivery_from_shop_method, delivery_address, remarks, delivery_to" +
-                "_shop_method FROM dbo.Bookings";
+            this._commandCollection[0].CommandText = "SELECT booking_id, booking_date, service_time, total_amount, service_type, status" +
+                ", user_id, payment_id, delivery_from_shop_method, delivery_address, remarks, del" +
+                "ivery_to_shop_method FROM dbo.Bookings";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -3085,7 +3184,7 @@ SELECT booking_id, booking_date, service_time, total_amount, service_type, user_
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(System.DateTime booking_date, System.DateTime service_time, decimal total_amount, string service_type, decimal user_id, global::System.Nullable<decimal> payment_id, string delivery_from_shop_method, string delivery_address, string remarks, string delivery_to_shop_method) {
+        public virtual int Insert(System.DateTime booking_date, System.DateTime service_time, decimal total_amount, string service_type, string status, decimal user_id, global::System.Nullable<decimal> payment_id, string delivery_from_shop_method, string delivery_address, string remarks, string delivery_to_shop_method) {
             this.Adapter.InsertCommand.Parameters[0].Value = ((System.DateTime)(booking_date));
             this.Adapter.InsertCommand.Parameters[1].Value = ((System.DateTime)(service_time));
             this.Adapter.InsertCommand.Parameters[2].Value = ((decimal)(total_amount));
@@ -3095,36 +3194,42 @@ SELECT booking_id, booking_date, service_time, total_amount, service_type, user_
             else {
                 this.Adapter.InsertCommand.Parameters[3].Value = ((string)(service_type));
             }
-            this.Adapter.InsertCommand.Parameters[4].Value = ((decimal)(user_id));
-            if ((payment_id.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[5].Value = ((decimal)(payment_id.Value));
+            if ((status == null)) {
+                throw new global::System.ArgumentNullException("status");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
+                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(status));
+            }
+            this.Adapter.InsertCommand.Parameters[5].Value = ((decimal)(user_id));
+            if ((payment_id.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[6].Value = ((decimal)(payment_id.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
             if ((delivery_from_shop_method == null)) {
                 throw new global::System.ArgumentNullException("delivery_from_shop_method");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[6].Value = ((string)(delivery_from_shop_method));
+                this.Adapter.InsertCommand.Parameters[7].Value = ((string)(delivery_from_shop_method));
             }
             if ((delivery_address == null)) {
-                this.Adapter.InsertCommand.Parameters[7].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[7].Value = ((string)(delivery_address));
-            }
-            if ((remarks == null)) {
                 this.Adapter.InsertCommand.Parameters[8].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[8].Value = ((string)(remarks));
+                this.Adapter.InsertCommand.Parameters[8].Value = ((string)(delivery_address));
+            }
+            if ((remarks == null)) {
+                this.Adapter.InsertCommand.Parameters[9].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[9].Value = ((string)(remarks));
             }
             if ((delivery_to_shop_method == null)) {
                 throw new global::System.ArgumentNullException("delivery_to_shop_method");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[9].Value = ((string)(delivery_to_shop_method));
+                this.Adapter.InsertCommand.Parameters[10].Value = ((string)(delivery_to_shop_method));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -3151,6 +3256,7 @@ SELECT booking_id, booking_date, service_time, total_amount, service_type, user_
                     System.DateTime service_time, 
                     decimal total_amount, 
                     string service_type, 
+                    string status, 
                     decimal user_id, 
                     global::System.Nullable<decimal> payment_id, 
                     string delivery_from_shop_method, 
@@ -3173,51 +3279,57 @@ SELECT booking_id, booking_date, service_time, total_amount, service_type, user_
             else {
                 this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(service_type));
             }
-            this.Adapter.UpdateCommand.Parameters[4].Value = ((decimal)(user_id));
-            if ((payment_id.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((decimal)(payment_id.Value));
+            if ((status == null)) {
+                throw new global::System.ArgumentNullException("status");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(status));
+            }
+            this.Adapter.UpdateCommand.Parameters[5].Value = ((decimal)(user_id));
+            if ((payment_id.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((decimal)(payment_id.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
             if ((delivery_from_shop_method == null)) {
                 throw new global::System.ArgumentNullException("delivery_from_shop_method");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(delivery_from_shop_method));
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(delivery_from_shop_method));
             }
             if ((delivery_address == null)) {
-                this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(delivery_address));
-            }
-            if ((remarks == null)) {
                 this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(remarks));
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(delivery_address));
+            }
+            if ((remarks == null)) {
+                this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(remarks));
             }
             if ((delivery_to_shop_method == null)) {
                 throw new global::System.ArgumentNullException("delivery_to_shop_method");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(delivery_to_shop_method));
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(delivery_to_shop_method));
             }
-            this.Adapter.UpdateCommand.Parameters[10].Value = ((decimal)(Original_booking_id));
-            this.Adapter.UpdateCommand.Parameters[11].Value = ((System.DateTime)(Original_booking_date));
-            this.Adapter.UpdateCommand.Parameters[12].Value = ((System.DateTime)(Original_service_time));
-            this.Adapter.UpdateCommand.Parameters[13].Value = ((decimal)(Original_total_amount));
-            this.Adapter.UpdateCommand.Parameters[14].Value = ((decimal)(Original_user_id));
+            this.Adapter.UpdateCommand.Parameters[11].Value = ((decimal)(Original_booking_id));
+            this.Adapter.UpdateCommand.Parameters[12].Value = ((System.DateTime)(Original_booking_date));
+            this.Adapter.UpdateCommand.Parameters[13].Value = ((System.DateTime)(Original_service_time));
+            this.Adapter.UpdateCommand.Parameters[14].Value = ((decimal)(Original_total_amount));
+            this.Adapter.UpdateCommand.Parameters[15].Value = ((decimal)(Original_user_id));
             if ((Original_payment_id.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((decimal)(Original_payment_id.Value));
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((decimal)(Original_payment_id.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[16].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[17].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[17].Value = ((decimal)(booking_id));
+            this.Adapter.UpdateCommand.Parameters[18].Value = ((decimal)(booking_id));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -3243,6 +3355,7 @@ SELECT booking_id, booking_date, service_time, total_amount, service_type, user_
                     System.DateTime service_time, 
                     decimal total_amount, 
                     string service_type, 
+                    string status, 
                     decimal user_id, 
                     global::System.Nullable<decimal> payment_id, 
                     string delivery_from_shop_method, 
@@ -3255,7 +3368,7 @@ SELECT booking_id, booking_date, service_time, total_amount, service_type, user_
                     decimal Original_total_amount, 
                     decimal Original_user_id, 
                     global::System.Nullable<decimal> Original_payment_id) {
-            return this.Update(booking_date, service_time, total_amount, service_type, user_id, payment_id, delivery_from_shop_method, delivery_address, remarks, delivery_to_shop_method, Original_booking_id, Original_booking_date, Original_service_time, Original_total_amount, Original_user_id, Original_payment_id, Original_booking_id);
+            return this.Update(booking_date, service_time, total_amount, service_type, status, user_id, payment_id, delivery_from_shop_method, delivery_address, remarks, delivery_to_shop_method, Original_booking_id, Original_booking_date, Original_service_time, Original_total_amount, Original_user_id, Original_payment_id, Original_booking_id);
         }
     }
     
@@ -4380,45 +4493,54 @@ SELECT service_id, name, description, price FROM Services WHERE (service_id = @s
             tableMapping.DataSetTable = "Users";
             tableMapping.ColumnMappings.Add("user_id", "user_id");
             tableMapping.ColumnMappings.Add("name", "name");
+            tableMapping.ColumnMappings.Add("gender", "gender");
             tableMapping.ColumnMappings.Add("phone_no", "phone_no");
-            tableMapping.ColumnMappings.Add("role", "role");
             tableMapping.ColumnMappings.Add("password", "password");
+            tableMapping.ColumnMappings.Add("role", "role");
+            tableMapping.ColumnMappings.Add("join_date", "join_date");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[Users] WHERE (([user_id] = @Original_user_id) AND ([name] = @O" +
-                "riginal_name) AND ([phone_no] = @Original_phone_no) AND ([role] = @Original_role" +
-                ") AND ([password] = @Original_password))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[Users] WHERE (([user_id] = @Original_user_id) AND ([name] = @Original_name) AND ([gender] = @Original_gender) AND ([phone_no] = @Original_phone_no) AND ([password] = @Original_password) AND ([role] = @Original_role) AND ((@IsNull_join_date = 1 AND [join_date] IS NULL) OR ([join_date] = @Original_join_date)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_user_id", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "user_id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_name", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "name", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_gender", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "gender", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_phone_no", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "phone_no", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_role", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "role", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_password", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "password", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_role", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "role", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_join_date", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "join_date", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_join_date", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "join_date", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Users] ([name], [phone_no], [role], [password]) VALUES (@name," +
-                " @phone_no, @role, @password);\r\nSELECT user_id, name, phone_no, role, password F" +
-                "ROM Users WHERE (user_id = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[Users] ([name], [gender], [phone_no], [password], [role], [join_date]) VALUES (@name, @gender, @phone_no, @password, @role, @join_date);
+SELECT user_id, name, gender, phone_no, password, role, join_date FROM Users WHERE (user_id = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@name", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@gender", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "gender", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@phone_no", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "phone_no", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@role", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "role", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@password", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "password", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@role", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "role", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@join_date", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "join_date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Users] SET [name] = @name, [phone_no] = @phone_no, [role] = @role, [password] = @password WHERE (([user_id] = @Original_user_id) AND ([name] = @Original_name) AND ([phone_no] = @Original_phone_no) AND ([role] = @Original_role) AND ([password] = @Original_password));
-SELECT user_id, name, phone_no, role, password FROM Users WHERE (user_id = @user_id)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Users] SET [name] = @name, [gender] = @gender, [phone_no] = @phone_no, [password] = @password, [role] = @role, [join_date] = @join_date WHERE (([user_id] = @Original_user_id) AND ([name] = @Original_name) AND ([gender] = @Original_gender) AND ([phone_no] = @Original_phone_no) AND ([password] = @Original_password) AND ([role] = @Original_role) AND ((@IsNull_join_date = 1 AND [join_date] IS NULL) OR ([join_date] = @Original_join_date)));
+SELECT user_id, name, gender, phone_no, password, role, join_date FROM Users WHERE (user_id = @user_id)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@name", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@gender", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "gender", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@phone_no", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "phone_no", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@role", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "role", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@password", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "password", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@role", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "role", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@join_date", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "join_date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_user_id", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "user_id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_name", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "name", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_gender", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "gender", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_phone_no", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "phone_no", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_role", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "role", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_password", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "password", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_role", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "role", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_join_date", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "join_date", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_join_date", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "join_date", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@user_id", global::System.Data.SqlDbType.Decimal, 9, global::System.Data.ParameterDirection.Input, 18, 0, "user_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
@@ -4435,7 +4557,7 @@ SELECT user_id, name, phone_no, role, password FROM Users WHERE (user_id = @user
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT user_id, name, phone_no, role, password FROM dbo.Users";
+            this._commandCollection[0].CommandText = "SELECT user_id, name, gender, phone_no, password, role, join_date FROM dbo.Users";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -4496,7 +4618,7 @@ SELECT user_id, name, phone_no, role, password FROM Users WHERE (user_id = @user
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(decimal Original_user_id, string Original_name, string Original_phone_no, string Original_role, string Original_password) {
+        public virtual int Delete(decimal Original_user_id, string Original_name, string Original_gender, string Original_phone_no, string Original_password, string Original_role, global::System.Nullable<global::System.DateTime> Original_join_date) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((decimal)(Original_user_id));
             if ((Original_name == null)) {
                 throw new global::System.ArgumentNullException("Original_name");
@@ -4504,23 +4626,37 @@ SELECT user_id, name, phone_no, role, password FROM Users WHERE (user_id = @user
             else {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((string)(Original_name));
             }
+            if ((Original_gender == null)) {
+                throw new global::System.ArgumentNullException("Original_gender");
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_gender));
+            }
             if ((Original_phone_no == null)) {
                 throw new global::System.ArgumentNullException("Original_phone_no");
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_phone_no));
-            }
-            if ((Original_role == null)) {
-                throw new global::System.ArgumentNullException("Original_role");
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[3].Value = ((string)(Original_role));
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((string)(Original_phone_no));
             }
             if ((Original_password == null)) {
                 throw new global::System.ArgumentNullException("Original_password");
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[4].Value = ((string)(Original_password));
+            }
+            if ((Original_role == null)) {
+                throw new global::System.ArgumentNullException("Original_role");
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((string)(Original_role));
+            }
+            if ((Original_join_date.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[6].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[7].Value = ((System.DateTime)(Original_join_date.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[6].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[7].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -4542,30 +4678,42 @@ SELECT user_id, name, phone_no, role, password FROM Users WHERE (user_id = @user
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string name, string phone_no, string role, string password) {
+        public virtual int Insert(string name, string gender, string phone_no, string password, string role, global::System.Nullable<global::System.DateTime> join_date) {
             if ((name == null)) {
                 throw new global::System.ArgumentNullException("name");
             }
             else {
                 this.Adapter.InsertCommand.Parameters[0].Value = ((string)(name));
             }
+            if ((gender == null)) {
+                throw new global::System.ArgumentNullException("gender");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(gender));
+            }
             if ((phone_no == null)) {
                 throw new global::System.ArgumentNullException("phone_no");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(phone_no));
-            }
-            if ((role == null)) {
-                throw new global::System.ArgumentNullException("role");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(role));
+                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(phone_no));
             }
             if ((password == null)) {
                 throw new global::System.ArgumentNullException("password");
             }
             else {
                 this.Adapter.InsertCommand.Parameters[3].Value = ((string)(password));
+            }
+            if ((role == null)) {
+                throw new global::System.ArgumentNullException("role");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(role));
+            }
+            if ((join_date.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[5].Value = ((System.DateTime)(join_date.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -4587,24 +4735,24 @@ SELECT user_id, name, phone_no, role, password FROM Users WHERE (user_id = @user
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string name, string phone_no, string role, string password, decimal Original_user_id, string Original_name, string Original_phone_no, string Original_role, string Original_password, decimal user_id) {
+        public virtual int Update(string name, string gender, string phone_no, string password, string role, global::System.Nullable<global::System.DateTime> join_date, decimal Original_user_id, string Original_name, string Original_gender, string Original_phone_no, string Original_password, string Original_role, global::System.Nullable<global::System.DateTime> Original_join_date, decimal user_id) {
             if ((name == null)) {
                 throw new global::System.ArgumentNullException("name");
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(name));
             }
+            if ((gender == null)) {
+                throw new global::System.ArgumentNullException("gender");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(gender));
+            }
             if ((phone_no == null)) {
                 throw new global::System.ArgumentNullException("phone_no");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(phone_no));
-            }
-            if ((role == null)) {
-                throw new global::System.ArgumentNullException("role");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(role));
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(phone_no));
             }
             if ((password == null)) {
                 throw new global::System.ArgumentNullException("password");
@@ -4612,32 +4760,58 @@ SELECT user_id, name, phone_no, role, password FROM Users WHERE (user_id = @user
             else {
                 this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(password));
             }
-            this.Adapter.UpdateCommand.Parameters[4].Value = ((decimal)(Original_user_id));
+            if ((role == null)) {
+                throw new global::System.ArgumentNullException("role");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(role));
+            }
+            if ((join_date.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((System.DateTime)(join_date.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[6].Value = ((decimal)(Original_user_id));
             if ((Original_name == null)) {
                 throw new global::System.ArgumentNullException("Original_name");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(Original_name));
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(Original_name));
+            }
+            if ((Original_gender == null)) {
+                throw new global::System.ArgumentNullException("Original_gender");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(Original_gender));
             }
             if ((Original_phone_no == null)) {
                 throw new global::System.ArgumentNullException("Original_phone_no");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(Original_phone_no));
-            }
-            if ((Original_role == null)) {
-                throw new global::System.ArgumentNullException("Original_role");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(Original_role));
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(Original_phone_no));
             }
             if ((Original_password == null)) {
                 throw new global::System.ArgumentNullException("Original_password");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(Original_password));
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(Original_password));
             }
-            this.Adapter.UpdateCommand.Parameters[9].Value = ((decimal)(user_id));
+            if ((Original_role == null)) {
+                throw new global::System.ArgumentNullException("Original_role");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(Original_role));
+            }
+            if ((Original_join_date.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((System.DateTime)(Original_join_date.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[14].Value = ((decimal)(user_id));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -4658,8 +4832,8 @@ SELECT user_id, name, phone_no, role, password FROM Users WHERE (user_id = @user
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string name, string phone_no, string role, string password, decimal Original_user_id, string Original_name, string Original_phone_no, string Original_role, string Original_password) {
-            return this.Update(name, phone_no, role, password, Original_user_id, Original_name, Original_phone_no, Original_role, Original_password, Original_user_id);
+        public virtual int Update(string name, string gender, string phone_no, string password, string role, global::System.Nullable<global::System.DateTime> join_date, decimal Original_user_id, string Original_name, string Original_gender, string Original_phone_no, string Original_password, string Original_role, global::System.Nullable<global::System.DateTime> Original_join_date) {
+            return this.Update(name, gender, phone_no, password, role, join_date, Original_user_id, Original_name, Original_gender, Original_phone_no, Original_password, Original_role, Original_join_date, Original_user_id);
         }
     }
     
