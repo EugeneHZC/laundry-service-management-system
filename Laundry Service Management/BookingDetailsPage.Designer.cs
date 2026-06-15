@@ -43,12 +43,14 @@
             this.remarksTxtBx = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.cancelBtn = new System.Windows.Forms.Button();
-            this.bookBtn = new System.Windows.Forms.Button();
+            this.saveBtn = new System.Windows.Forms.Button();
             this.timeOfServiceDtp = new System.Windows.Forms.DateTimePicker();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.dateOfServiceDtp = new System.Windows.Forms.DateTimePicker();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.statusCmbBx = new System.Windows.Forms.ComboBox();
+            this.statusLbl = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -191,7 +193,7 @@
             // 
             // cancelBtn
             // 
-            this.cancelBtn.Location = new System.Drawing.Point(149, 594);
+            this.cancelBtn.Location = new System.Drawing.Point(146, 627);
             this.cancelBtn.Name = "cancelBtn";
             this.cancelBtn.Size = new System.Drawing.Size(110, 37);
             this.cancelBtn.TabIndex = 14;
@@ -199,15 +201,15 @@
             this.cancelBtn.UseVisualStyleBackColor = true;
             this.cancelBtn.Click += new System.EventHandler(this.cancelBtn_Click);
             // 
-            // bookBtn
+            // saveBtn
             // 
-            this.bookBtn.Location = new System.Drawing.Point(368, 594);
-            this.bookBtn.Name = "bookBtn";
-            this.bookBtn.Size = new System.Drawing.Size(110, 37);
-            this.bookBtn.TabIndex = 15;
-            this.bookBtn.Text = "Book";
-            this.bookBtn.UseVisualStyleBackColor = true;
-            this.bookBtn.Click += new System.EventHandler(this.bookBtn_Click);
+            this.saveBtn.Location = new System.Drawing.Point(365, 627);
+            this.saveBtn.Name = "saveBtn";
+            this.saveBtn.Size = new System.Drawing.Size(110, 37);
+            this.saveBtn.TabIndex = 15;
+            this.saveBtn.Text = "Save";
+            this.saveBtn.UseVisualStyleBackColor = true;
+            this.saveBtn.Click += new System.EventHandler(this.bookBtn_Click);
             // 
             // timeOfServiceDtp
             // 
@@ -252,17 +254,40 @@
             this.panel1.Size = new System.Drawing.Size(223, 28);
             this.panel1.TabIndex = 20;
             // 
-            // AddServicePage
+            // statusCmbBx
+            // 
+            this.statusCmbBx.FormattingEnabled = true;
+            this.statusCmbBx.Items.AddRange(new object[] {
+            "Scheduled",
+            "Pending Delivery",
+            "Completed"});
+            this.statusCmbBx.Location = new System.Drawing.Point(321, 570);
+            this.statusCmbBx.Name = "statusCmbBx";
+            this.statusCmbBx.Size = new System.Drawing.Size(203, 25);
+            this.statusCmbBx.TabIndex = 22;
+            // 
+            // statusLbl
+            // 
+            this.statusLbl.AutoSize = true;
+            this.statusLbl.Location = new System.Drawing.Point(103, 573);
+            this.statusLbl.Name = "statusLbl";
+            this.statusLbl.Size = new System.Drawing.Size(54, 17);
+            this.statusLbl.TabIndex = 21;
+            this.statusLbl.Text = "Status:";
+            // 
+            // BookingDetailsPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(647, 660);
+            this.ClientSize = new System.Drawing.Size(647, 711);
+            this.Controls.Add(this.statusCmbBx);
+            this.Controls.Add(this.statusLbl);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.dateOfServiceDtp);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.timeOfServiceDtp);
-            this.Controls.Add(this.bookBtn);
+            this.Controls.Add(this.saveBtn);
             this.Controls.Add(this.cancelBtn);
             this.Controls.Add(this.remarksTxtBx);
             this.Controls.Add(this.label6);
@@ -277,7 +302,7 @@
             this.Controls.Add(this.serviceTypeCmbBx);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Name = "AddServicePage";
+            this.Name = "BookingDetailsPage";
             this.Text = "Book Service";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -303,11 +328,13 @@
         private System.Windows.Forms.TextBox remarksTxtBx;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button cancelBtn;
-        private System.Windows.Forms.Button bookBtn;
+        private System.Windows.Forms.Button saveBtn;
         private System.Windows.Forms.DateTimePicker timeOfServiceDtp;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.DateTimePicker dateOfServiceDtp;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.ComboBox statusCmbBx;
+        private System.Windows.Forms.Label statusLbl;
     }
 }

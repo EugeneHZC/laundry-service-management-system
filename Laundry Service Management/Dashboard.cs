@@ -10,6 +10,7 @@ namespace Laundry_Service_Management
         private int completedBookings;
         private int scheduledBookings;
         private int pendingDeliveryBookings;
+        private int currentYear = DateTime.Now.Year;
 
         public Dashboard()
         {
@@ -30,7 +31,6 @@ namespace Laundry_Service_Management
             var totalBookingsResult = cmd.ExecuteScalar();
             totalBookingsTxtBx.Text = totalBookingsResult.ToString();
 
-            var currentYear = DateTime.Now.Year;
             cmd.CommandText = $"SELECT COUNT(*) as total_bookings FROM [Bookings] WHERE YEAR(booking_date) = {currentYear}";
             var totalBookingsThisYear = cmd.ExecuteScalar();
             totalBookingsThisYearTxtBx.Text = totalBookingsThisYear.ToString();
@@ -60,7 +60,6 @@ namespace Laundry_Service_Management
             var totalCustomers = cmd.ExecuteScalar();
             totalCustomerTxtBx.Text = totalCustomers.ToString();
 
-            var currentYear = DateTime.Now.Year;
             cmd.CommandText = $"SELECT COUNT(*) as total_customers_this_year FROM [Users] WHERE role = 'Customer' AND YEAR(join_date) = {currentYear}";
             var totalCustomersThisYear = cmd.ExecuteScalar();
             totalCusThisYearTxtBx.Text = totalCustomersThisYear.ToString();
@@ -75,18 +74,36 @@ namespace Laundry_Service_Management
             SqlCommand cmd = Helper.conn.CreateCommand();
             cmd.CommandType = System.Data.CommandType.Text;
 
-            var currentYear = DateTime.Now.Year;
             cmd.CommandText = $"SELECT SUM(total_amount) AS total_revenue_this_year FROM [Bookings] WHERE status = 'Completed' AND YEAR(booking_date) = {currentYear}";
             var totalRevenueThisYear = cmd.ExecuteScalar();
-            totalRevenueThisYearTxtBx.Text = totalRevenueThisYear.ToString();
+
+            if (!decimal.TryParse(totalRevenueThisYear.ToString(), out var totalRevenueThisYearDec))
+            {
+                totalRevenueThisYearDec = 0;
+            }
+
+            totalRevenueThisYearTxtBx.Text = totalRevenueThisYearDec.ToString();
 
             cmd.CommandText = "SELECT SUM(total_amount) AS total_revenue FROM [Bookings] WHERE status = 'Completed'";
             var totalRevenue = cmd.ExecuteScalar();
-            totalRevenueTxtBx.Text = totalRevenue.ToString();
 
+            if (!decimal.TryParse(totalRevenue.ToString(), out var totalRevenueDec))
+            {
+                totalRevenueDec = 0;
+            }
+
+            totalRevenueTxtBx.Text = totalRevenueDec.ToString();
             var completedBookingsResult = int.Parse(completedBookingsTxtBx.Text);
-            var averageRevenue = (decimal)totalRevenue / (int)completedBookingsResult;
-            averageRevenueTxtBx.Text = averageRevenue.ToString();
+
+            if (completedBookingsResult == 0)
+            {
+                averageRevenueTxtBx.Text = "0.00";
+            }
+            else
+            {
+                var averageRevenue = totalRevenueDec / completedBookingsResult;
+                averageRevenueTxtBx.Text = averageRevenue.ToString();
+            }
 
             Helper.conn.Close();
         }
@@ -108,6 +125,45 @@ namespace Laundry_Service_Management
             bookingsChart.Series.Add(series);
             // show the value as the label in the pie chart (instead of using the name as the label)
             series.IsValueShownAsLabel = true;
+
+            Helper.conn.Open();
+
+            SqlCommand cmd = Helper.conn.CreateCommand();
+            cmd.CommandType = System.Data.CommandType.Text;
+
+            cmd.CommandText = $"SELECT SUM(total_amount) AS total_revenue_this_year FROM [Bookings] WHERE status = 'Completed' AND YEAR(booking_date) = {currentYear}";
+            var totalRevenueThisYear = cmd.ExecuteScalar();
+
+            if (!decimal.TryParse(totalRevenueThisYear.ToString(), out var totalRevenueThisYearDec))
+            {
+                totalRevenueThisYearDec = 0;
+            }
+
+            cmd.CommandText = $"SELECT SUM(total_amount) AS total_revenue_prev_year FROM [Bookings] WHERE status = 'Completed' AND YEAR(booking_date) != {currentYear}";
+            var totalRevenuePrevYear = cmd.ExecuteScalar();
+
+            if (!decimal.TryParse(totalRevenuePrevYear.ToString(), out var totalRevenuePrevYearDec))
+            {
+                totalRevenuePrevYearDec = 0;
+            }
+
+            Helper.conn.Close();
+
+            revenueChart.Series.Clear();
+            var revenuePreviousYearSeries = new Series("Previous Year");
+            revenuePreviousYearSeries.ChartType = SeriesChartType.Column;
+            revenuePreviousYearSeries.Points.AddY(totalRevenuePrevYearDec);
+
+            var revenueCurrentYearSeries = new Series("Current Year");
+            revenueCurrentYearSeries.ChartType = SeriesChartType.Column;
+            revenueCurrentYearSeries.Points.AddY(totalRevenueThisYearDec);
+
+            revenueChart.ChartAreas[0].AxisX.Title = "Year";
+            revenueChart.ChartAreas[0].AxisY.Title = "Revenue (RM)";
+            revenueChart.ChartAreas[0].AxisX.LabelStyle.Enabled = false;
+
+            revenueChart.Series.Add(revenuePreviousYearSeries);
+            revenueChart.Series.Add(revenueCurrentYearSeries);
         }
     }
 }

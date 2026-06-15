@@ -31,7 +31,13 @@
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.pendingDeliveryTxtBx = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.bookingsChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.totalBookingsThisYearTxtBx = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.completedBookingsTxtBx = new System.Windows.Forms.TextBox();
@@ -53,13 +59,12 @@
             this.label9 = new System.Windows.Forms.Label();
             this.totalRevenueTxtBx = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.bookingsChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.pendingDeliveryTxtBx = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
+            this.revenueChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bookingsChart)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bookingsChart)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.revenueChart)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -77,10 +82,44 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(59, 85);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(531, 544);
+            this.groupBox1.Size = new System.Drawing.Size(531, 568);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Bookings Statistics";
+            // 
+            // pendingDeliveryTxtBx
+            // 
+            this.pendingDeliveryTxtBx.Location = new System.Drawing.Point(291, 166);
+            this.pendingDeliveryTxtBx.Name = "pendingDeliveryTxtBx";
+            this.pendingDeliveryTxtBx.ReadOnly = true;
+            this.pendingDeliveryTxtBx.Size = new System.Drawing.Size(163, 22);
+            this.pendingDeliveryTxtBx.TabIndex = 14;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(31, 169);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(176, 16);
+            this.label11.TabIndex = 13;
+            this.label11.Text = "Pending for Pickup/Delivery:";
+            // 
+            // bookingsChart
+            // 
+            chartArea1.Name = "ChartArea1";
+            this.bookingsChart.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.bookingsChart.Legends.Add(legend1);
+            this.bookingsChart.Location = new System.Drawing.Point(56, 310);
+            this.bookingsChart.Name = "bookingsChart";
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.bookingsChart.Series.Add(series1);
+            this.bookingsChart.Size = new System.Drawing.Size(398, 234);
+            this.bookingsChart.TabIndex = 12;
+            this.bookingsChart.Text = "chart1";
             // 
             // totalBookingsThisYearTxtBx
             // 
@@ -209,15 +248,16 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.revenueChart);
             this.groupBox3.Controls.Add(this.totalRevenueThisYearTxtBx);
             this.groupBox3.Controls.Add(this.label10);
             this.groupBox3.Controls.Add(this.averageRevenueTxtBx);
             this.groupBox3.Controls.Add(this.label9);
             this.groupBox3.Controls.Add(this.totalRevenueTxtBx);
             this.groupBox3.Controls.Add(this.label8);
-            this.groupBox3.Location = new System.Drawing.Point(608, 208);
+            this.groupBox3.Location = new System.Drawing.Point(608, 223);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(483, 199);
+            this.groupBox3.Size = new System.Drawing.Size(483, 430);
             this.groupBox3.TabIndex = 4;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Revenue";
@@ -273,39 +313,21 @@
             this.label8.TabIndex = 14;
             this.label8.Text = "Total Revenue (RM):";
             // 
-            // bookingsChart
+            // revenueChart
             // 
-            chartArea1.Name = "ChartArea1";
-            this.bookingsChart.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.bookingsChart.Legends.Add(legend1);
-            this.bookingsChart.Location = new System.Drawing.Point(34, 290);
-            this.bookingsChart.Name = "bookingsChart";
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.bookingsChart.Series.Add(series1);
-            this.bookingsChart.Size = new System.Drawing.Size(398, 234);
-            this.bookingsChart.TabIndex = 12;
-            this.bookingsChart.Text = "chart1";
-            // 
-            // pendingDeliveryTxtBx
-            // 
-            this.pendingDeliveryTxtBx.Location = new System.Drawing.Point(291, 166);
-            this.pendingDeliveryTxtBx.Name = "pendingDeliveryTxtBx";
-            this.pendingDeliveryTxtBx.ReadOnly = true;
-            this.pendingDeliveryTxtBx.Size = new System.Drawing.Size(163, 22);
-            this.pendingDeliveryTxtBx.TabIndex = 14;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(31, 169);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(220, 20);
-            this.label11.TabIndex = 13;
-            this.label11.Text = "Pending for Pickup/Delivery:";
+            chartArea2.Name = "ChartArea1";
+            this.revenueChart.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.revenueChart.Legends.Add(legend2);
+            this.revenueChart.Location = new System.Drawing.Point(126, 193);
+            this.revenueChart.Name = "revenueChart";
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.revenueChart.Series.Add(series2);
+            this.revenueChart.Size = new System.Drawing.Size(300, 213);
+            this.revenueChart.TabIndex = 20;
+            this.revenueChart.Text = "chart1";
             // 
             // Dashboard
             // 
@@ -319,11 +341,12 @@
             this.Size = new System.Drawing.Size(1290, 689);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bookingsChart)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bookingsChart)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.revenueChart)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -356,5 +379,6 @@
         private System.Windows.Forms.TextBox pendingDeliveryTxtBx;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.DataVisualization.Charting.Chart bookingsChart;
+        private System.Windows.Forms.DataVisualization.Charting.Chart revenueChart;
     }
 }

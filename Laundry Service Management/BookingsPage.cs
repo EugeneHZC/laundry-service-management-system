@@ -52,7 +52,7 @@ namespace Laundry_Service_Management
                     delivery_to_shop_method = reader["delivery_to_shop_method"].ToString(),
                     total_amount = total_amount,
                     service_type = reader["service_type"].ToString(),
-                    status = "Scheduled",
+                    status = reader["status"].ToString(),
                     delivery_from_shop_method = reader["delivery_from_shop_method"].ToString(),
                     delivery_address = reader["delivery_address"].ToString(),
                     remarks = reader["remarks"].ToString(),
@@ -75,8 +75,8 @@ namespace Laundry_Service_Management
                 b.service_time.ToString().ToLower().Contains(search) ||
                 b.service_type.ToLower().Contains(search)
                 ).ToList();
-            bookingsDGV.DataSource = null;
-            bookingsDGV.DataSource = filtered;
+            bookingsDataGridView.DataSource = null;
+            bookingsDataGridView.DataSource = filtered;
         }
 
         private void textBox1_TextChanged(object sender, System.EventArgs e)
@@ -86,8 +86,35 @@ namespace Laundry_Service_Management
 
         private void bookAppointmentBtn_Click(object sender, EventArgs e)
         {
-            new BookingDetailsPage().ShowDialog();
+            var booking = new Booking();
+            new BookingDetailsPage(booking).ShowDialog();
             LoadData();
+        }
+
+        private void bookingsDataGridView_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (e.ColumnIndex == 10 && Helper.UserRole != "Customer")
+            {
+                e.Value = "Booking Details";
+            }
+        }
+
+        private void bookingsDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == 10 && Helper.UserRole != "Customer" && e.RowIndex >= 0)
+            {
+                var booking = bookingsDataGridView.Rows[e.RowIndex].DataBoundItem as Booking;
+                new BookingDetailsPage(booking).ShowDialog();
+                LoadData();
+            }
+        }
+
+        private void bookingsBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.bookingsBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.laundryServiceManagementDbDataSet1);
+
         }
     }
 }
