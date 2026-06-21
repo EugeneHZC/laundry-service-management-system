@@ -165,5 +165,10 @@ namespace Laundry_Service_Management
             revenueChart.Series.Add(revenuePreviousYearSeries);
             revenueChart.Series.Add(revenueCurrentYearSeries);
         }
+
+        private void Dashboard_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
