@@ -31,6 +31,9 @@ namespace Laundry_Service_Management
                 case "Booking":
                     mainContentPnl.Controls.Add(new BookingsPage());
                     break;
+                case "Profile":
+                    mainContentPnl.Controls.Add(new ProfilePage());
+                    break;
                 default:
                     break;
             }

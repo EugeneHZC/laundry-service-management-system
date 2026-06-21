@@ -14,3 +14,4 @@ C:\Users\User\Desktop\UTeM\Sem 4\Event-Driven Programming\Project\Laundry Servic
 C:\Users\User\Desktop\UTeM\Sem 4\Event-Driven Programming\Project\Laundry Service Management\Laundry Service Management\obj\Debug\Laundry_Service_Management.BookingsPage.resources
 C:\Users\User\Desktop\UTeM\Sem 4\Event-Driven Programming\Project\Laundry Service Management\Laundry Service Management\obj\Debug\Laundry_Service_Management.Dashboard.resources
 C:\Users\User\Desktop\UTeM\Sem 4\Event-Driven Programming\Project\Laundry Service Management\Laundry Service Management\obj\Debug\Laundry_Service_Management.BookingDetailsPage.resources
+C:\Users\User\Desktop\UTeM\Sem 4\Event-Driven Programming\Project\Laundry Service Management\Laundry Service Management\obj\Debug\Laundry_Service_Management.ProfilePage.resources
