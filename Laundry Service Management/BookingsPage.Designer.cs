@@ -253,6 +253,7 @@
             this.Controls.Add(this.label1);
             this.Name = "BookingsPage";
             this.Size = new System.Drawing.Size(1046, 720);
+            this.Load += new System.EventHandler(this.BookingsPage_Load);
             ((System.ComponentModel.ISupportInitialize)(this.laundryServiceManagementDbDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bookingsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bookingsDataGridView)).EndInit();

@@ -116,5 +116,10 @@ namespace Laundry_Service_Management
             this.tableAdapterManager.UpdateAll(this.laundryServiceManagementDbDataSet1);
 
         }
+
+        private void BookingsPage_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

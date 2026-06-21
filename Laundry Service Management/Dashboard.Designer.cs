@@ -53,13 +53,13 @@
             this.totalCustomerTxtBx = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.revenueChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.totalRevenueThisYearTxtBx = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.averageRevenueTxtBx = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.totalRevenueTxtBx = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.revenueChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bookingsChart)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -262,6 +262,22 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Revenue";
             // 
+            // revenueChart
+            // 
+            chartArea2.Name = "ChartArea1";
+            this.revenueChart.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.revenueChart.Legends.Add(legend2);
+            this.revenueChart.Location = new System.Drawing.Point(126, 193);
+            this.revenueChart.Name = "revenueChart";
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.revenueChart.Series.Add(series2);
+            this.revenueChart.Size = new System.Drawing.Size(300, 213);
+            this.revenueChart.TabIndex = 20;
+            this.revenueChart.Text = "chart1";
+            // 
             // totalRevenueThisYearTxtBx
             // 
             this.totalRevenueThisYearTxtBx.Location = new System.Drawing.Point(290, 87);
@@ -313,22 +329,6 @@
             this.label8.TabIndex = 14;
             this.label8.Text = "Total Revenue (RM):";
             // 
-            // revenueChart
-            // 
-            chartArea2.Name = "ChartArea1";
-            this.revenueChart.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.revenueChart.Legends.Add(legend2);
-            this.revenueChart.Location = new System.Drawing.Point(126, 193);
-            this.revenueChart.Name = "revenueChart";
-            series2.ChartArea = "ChartArea1";
-            series2.Legend = "Legend1";
-            series2.Name = "Series1";
-            this.revenueChart.Series.Add(series2);
-            this.revenueChart.Size = new System.Drawing.Size(300, 213);
-            this.revenueChart.TabIndex = 20;
-            this.revenueChart.Text = "chart1";
-            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -339,6 +339,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "Dashboard";
             this.Size = new System.Drawing.Size(1290, 689);
+            this.Load += new System.EventHandler(this.Dashboard_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bookingsChart)).EndInit();
