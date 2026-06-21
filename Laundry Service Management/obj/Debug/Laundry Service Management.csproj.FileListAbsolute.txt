@@ -14,6 +14,7 @@ C:\Users\User\Desktop\UTeM\Sem 4\Event-Driven Programming\Project\Laundry Servic
 C:\Users\User\Desktop\UTeM\Sem 4\Event-Driven Programming\Project\Laundry Service Management\Laundry Service Management\obj\Debug\Laundry_Service_Management.BookingsPage.resources
 C:\Users\User\Desktop\UTeM\Sem 4\Event-Driven Programming\Project\Laundry Service Management\Laundry Service Management\obj\Debug\Laundry_Service_Management.Dashboard.resources
 C:\Users\User\Desktop\UTeM\Sem 4\Event-Driven Programming\Project\Laundry Service Management\Laundry Service Management\obj\Debug\Laundry_Service_Management.BookingDetailsPage.resources
+<<<<<<< HEAD
 C:\Users\danis\Music\laundry-service-management-system\Laundry Service Management\bin\Debug\LaundryServiceManagementDb.mdf
 C:\Users\danis\Music\laundry-service-management-system\Laundry Service Management\bin\Debug\LaundryServiceManagementDb_log.ldf
 C:\Users\danis\Music\laundry-service-management-system\Laundry Service Management\bin\Debug\Laundry Service Management.exe.config
@@ -30,3 +31,25 @@ C:\Users\danis\Music\laundry-service-management-system\Laundry Service Managemen
 C:\Users\danis\Music\laundry-service-management-system\Laundry Service Management\obj\Debug\Laundry Service Management.csproj.CoreCompileInputs.cache
 C:\Users\danis\Music\laundry-service-management-system\Laundry Service Management\obj\Debug\Laundry Service Management.exe
 C:\Users\danis\Music\laundry-service-management-system\Laundry Service Management\obj\Debug\Laundry Service Management.pdb
+=======
+C:\Users\User\Desktop\UTeM\Sem 4\Event-Driven Programming\Project\Laundry Service Management\Laundry Service Management\obj\Debug\Laundry_Service_Management.ProfilePage.resources
+C:\Users\ainat\OneDrive\Documents\SEM4_26\EVENT\Project_EDP\laundry-service-management-system\Laundry Service Management\bin\Debug\LaundryServiceManagementDb.mdf
+C:\Users\ainat\OneDrive\Documents\SEM4_26\EVENT\Project_EDP\laundry-service-management-system\Laundry Service Management\bin\Debug\LaundryServiceManagementDb_log.ldf
+C:\Users\ainat\OneDrive\Documents\SEM4_26\EVENT\Project_EDP\laundry-service-management-system\Laundry Service Management\bin\Debug\Laundry Service Management.exe.config
+C:\Users\ainat\OneDrive\Documents\SEM4_26\EVENT\Project_EDP\laundry-service-management-system\Laundry Service Management\bin\Debug\Laundry Service Management.exe
+C:\Users\ainat\OneDrive\Documents\SEM4_26\EVENT\Project_EDP\laundry-service-management-system\Laundry Service Management\bin\Debug\Laundry Service Management.pdb
+C:\Users\ainat\OneDrive\Documents\SEM4_26\EVENT\Project_EDP\laundry-service-management-system\Laundry Service Management\obj\Debug\Laundry Service Management.csproj.AssemblyReference.cache
+C:\Users\ainat\OneDrive\Documents\SEM4_26\EVENT\Project_EDP\laundry-service-management-system\Laundry Service Management\obj\Debug\Laundry Service Management.exe.config
+C:\Users\ainat\OneDrive\Documents\SEM4_26\EVENT\Project_EDP\laundry-service-management-system\Laundry Service Management\obj\Debug\Laundry_Service_Management.BookingDetailsPage.resources
+C:\Users\ainat\OneDrive\Documents\SEM4_26\EVENT\Project_EDP\laundry-service-management-system\Laundry Service Management\obj\Debug\Laundry_Service_Management.BookingsPage.resources
+C:\Users\ainat\OneDrive\Documents\SEM4_26\EVENT\Project_EDP\laundry-service-management-system\Laundry Service Management\obj\Debug\Laundry_Service_Management.Dashboard.resources
+C:\Users\ainat\OneDrive\Documents\SEM4_26\EVENT\Project_EDP\laundry-service-management-system\Laundry Service Management\obj\Debug\Laundry_Service_Management.DesignTemplate.resources
+C:\Users\ainat\OneDrive\Documents\SEM4_26\EVENT\Project_EDP\laundry-service-management-system\Laundry Service Management\obj\Debug\Laundry_Service_Management.Login.resources
+C:\Users\ainat\OneDrive\Documents\SEM4_26\EVENT\Project_EDP\laundry-service-management-system\Laundry Service Management\obj\Debug\Laundry_Service_Management.Properties.Resources.resources
+C:\Users\ainat\OneDrive\Documents\SEM4_26\EVENT\Project_EDP\laundry-service-management-system\Laundry Service Management\obj\Debug\Laundry Service Management.csproj.GenerateResource.cache
+C:\Users\ainat\OneDrive\Documents\SEM4_26\EVENT\Project_EDP\laundry-service-management-system\Laundry Service Management\obj\Debug\Laundry Service Management.csproj.CoreCompileInputs.cache
+C:\Users\ainat\OneDrive\Documents\SEM4_26\EVENT\Project_EDP\laundry-service-management-system\Laundry Service Management\obj\Debug\Laundry Service Management.exe
+C:\Users\ainat\OneDrive\Documents\SEM4_26\EVENT\Project_EDP\laundry-service-management-system\Laundry Service Management\obj\Debug\Laundry Service Management.pdb
+C:\Users\User\Desktop\UTeM\Sem 4\Event-Driven Programming\Project\Laundry Service Management\Laundry Service Management\obj\Debug\Laundry_Service_Management.login.resources
+C:\Users\User\Desktop\UTeM\Sem 4\Event-Driven Programming\Project\Laundry Service Management\Laundry Service Management\obj\Debug\Laundry_Service_Management.register.resources
+>>>>>>> d2e3d5aa04b566962a459dcff2604824dbc2b0f7
