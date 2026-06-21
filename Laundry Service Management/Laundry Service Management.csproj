@@ -49,7 +49,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System">
-      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\System.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\System.dll</HintPath>
     </Reference>
     <Reference Include="System">
       <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\System.dll</HintPath>
@@ -70,6 +70,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="addService.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="addService.Designer.cs">
+      <DependentUpon>addService.cs</DependentUpon>
+    </Compile>
     <Compile Include="BookingDetailsPage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -135,6 +141,15 @@
     <Compile Include="register.Designer.cs">
       <DependentUpon>register.cs</DependentUpon>
     </Compile>
+    <Compile Include="viewService.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="viewService.Designer.cs">
+      <DependentUpon>viewService.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="addService.resx">
+      <DependentUpon>addService.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="BookingDetailsPage.resx">
       <DependentUpon>BookingDetailsPage.cs</DependentUpon>
     </EmbeddedResource>
@@ -167,6 +182,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="register.resx">
       <DependentUpon>register.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="viewService.resx">
+      <DependentUpon>viewService.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="LaundryServiceManagementDbDataSet.xsc">
       <DependentUpon>LaundryServiceManagementDbDataSet.xsd</DependentUpon>
