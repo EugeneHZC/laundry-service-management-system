@@ -28,11 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.TreeNode treeNode16 = new System.Windows.Forms.TreeNode("Dashboard");
-            System.Windows.Forms.TreeNode treeNode17 = new System.Windows.Forms.TreeNode("Staff Management");
-            System.Windows.Forms.TreeNode treeNode18 = new System.Windows.Forms.TreeNode("Service");
-            System.Windows.Forms.TreeNode treeNode19 = new System.Windows.Forms.TreeNode("Booking");
-            System.Windows.Forms.TreeNode treeNode20 = new System.Windows.Forms.TreeNode("History payment");
+            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Dashboard");
+            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Staff Management");
+            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("Service");
+            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("Booking");
+            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("History payment");
+            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("Profile");
             this.treeView1 = new System.Windows.Forms.TreeView();
             this.mainContentPnl = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -44,22 +45,25 @@
             this.treeView1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.treeView1.Location = new System.Drawing.Point(2, 97);
             this.treeView1.Name = "treeView1";
-            treeNode16.Name = "Dashboard";
-            treeNode16.Text = "Dashboard";
-            treeNode17.Name = "Staff Management";
-            treeNode17.Text = "Staff Management";
-            treeNode18.Name = "Service";
-            treeNode18.Text = "Service";
-            treeNode19.Name = "Booking";
-            treeNode19.Text = "Booking";
-            treeNode20.Name = "History payment";
-            treeNode20.Text = "History payment";
+            treeNode1.Name = "Dashboard";
+            treeNode1.Text = "Dashboard";
+            treeNode2.Name = "Staff Management";
+            treeNode2.Text = "Staff Management";
+            treeNode3.Name = "Service";
+            treeNode3.Text = "Service";
+            treeNode4.Name = "Booking";
+            treeNode4.Text = "Booking";
+            treeNode5.Name = "History payment";
+            treeNode5.Text = "History payment";
+            treeNode6.Name = "Profile";
+            treeNode6.Text = "Profile";
             this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode16,
-            treeNode17,
-            treeNode18,
-            treeNode19,
-            treeNode20});
+            treeNode1,
+            treeNode2,
+            treeNode3,
+            treeNode4,
+            treeNode5,
+            treeNode6});
             this.treeView1.Size = new System.Drawing.Size(221, 745);
             this.treeView1.TabIndex = 0;
             this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect);
