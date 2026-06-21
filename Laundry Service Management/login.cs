@@ -74,8 +74,8 @@ namespace Laundry_Service_Management
 
                     if (role == "Customer")
                     {
-                        Service frm = new Service ();
-                        frm.Show();
+                        //Service frm = new Service ();
+                        //frm.Show();
                     }
                     else if (role == "Staff")
                     {
@@ -114,6 +114,11 @@ namespace Laundry_Service_Management
             register frm = new register();
             frm.Show();
             this.Hide();
+        }
+
+        private void login_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

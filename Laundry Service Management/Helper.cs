@@ -1,4 +1,5 @@
 ﻿using System.Data.SqlClient;
+using System.Configuration;
 
 namespace Laundry_Service_Management
 {

@@ -16,6 +16,7 @@ namespace Laundry_Service_Management
             {
                 treeView1.Nodes.RemoveByKey("Dashboard");
                 treeView1.Nodes.RemoveByKey("Staff Management");
+                treeView1.Nodes.RemoveByKey("History payment");
             }
         }
 
@@ -31,9 +32,22 @@ namespace Laundry_Service_Management
                 case "Booking":
                     mainContentPnl.Controls.Add(new BookingsPage());
                     break;
+                case "History payment":
+                    mainContentPnl.Controls.Add(new ViewPayment());
+                    break;
                 default:
                     break;
             }
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void mainContentPnl_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
