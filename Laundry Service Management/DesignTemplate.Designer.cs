@@ -30,8 +30,9 @@
         {
             System.Windows.Forms.TreeNode treeNode16 = new System.Windows.Forms.TreeNode("Dashboard");
             System.Windows.Forms.TreeNode treeNode17 = new System.Windows.Forms.TreeNode("Staff Management");
-            System.Windows.Forms.TreeNode treeNode18 = new System.Windows.Forms.TreeNode("Service");
-            System.Windows.Forms.TreeNode treeNode19 = new System.Windows.Forms.TreeNode("Booking");
+            System.Windows.Forms.TreeNode treeNode18 = new System.Windows.Forms.TreeNode("View Customers");
+            System.Windows.Forms.TreeNode treeNode19 = new System.Windows.Forms.TreeNode("Service");
+            System.Windows.Forms.TreeNode treeNode21 = new System.Windows.Forms.TreeNode("Booking");
             System.Windows.Forms.TreeNode treeNode20 = new System.Windows.Forms.TreeNode("History payment");
             this.treeView1 = new System.Windows.Forms.TreeView();
             this.mainContentPnl = new System.Windows.Forms.Panel();
@@ -48,10 +49,12 @@
             treeNode16.Text = "Dashboard";
             treeNode17.Name = "Staff Management";
             treeNode17.Text = "Staff Management";
-            treeNode18.Name = "Service";
-            treeNode18.Text = "Service";
-            treeNode19.Name = "Booking";
-            treeNode19.Text = "Booking";
+            treeNode18.Name = "View Customers";
+            treeNode18.Text = "View Customers";
+            treeNode19.Name = "Service";
+            treeNode19.Text = "Service";
+            treeNode21.Name = "Booking";
+            treeNode21.Text = "Booking";
             treeNode20.Name = "History payment";
             treeNode20.Text = "History payment";
             this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
@@ -59,6 +62,7 @@
             treeNode17,
             treeNode18,
             treeNode19,
+            treeNode21,
             treeNode20});
             this.treeView1.Size = new System.Drawing.Size(221, 745);
             this.treeView1.TabIndex = 0;

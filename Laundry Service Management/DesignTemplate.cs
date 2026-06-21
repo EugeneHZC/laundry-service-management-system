@@ -17,6 +17,11 @@ namespace Laundry_Service_Management
                 treeView1.Nodes.RemoveByKey("Dashboard");
                 treeView1.Nodes.RemoveByKey("Staff Management");
             }
+
+            if (Helper.UserRole != "Staff")
+            {
+                treeView1.Nodes.RemoveByKey("View Customers");
+            }
         }
 
         private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
@@ -27,6 +32,12 @@ namespace Laundry_Service_Management
             {
                 case "Dashboard":
                     mainContentPnl.Controls.Add(new Dashboard());
+                    break;
+                case "Staff Management":
+                    mainContentPnl.Controls.Add(new StaffManagementPage());
+                    break;
+                case "View Customers":
+                    mainContentPnl.Controls.Add(new ViewCustomersPage());
                     break;
                 case "Booking":
                     mainContentPnl.Controls.Add(new BookingsPage());
