@@ -1,13 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Net.NetworkInformation;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Laundry_Service_Management
@@ -74,8 +66,8 @@ namespace Laundry_Service_Management
 
                     if (role == "Customer")
                     {
-                        Service frm = new Service ();
-                        frm.Show();
+                        //Service frm = new Service ();
+                        //frm.Show();
                     }
                     else if (role == "Staff")
                     {
