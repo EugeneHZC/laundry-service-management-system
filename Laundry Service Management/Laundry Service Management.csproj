@@ -206,9 +206,6 @@
     <EmbeddedResource Include="ViewCustomersPage.resx">
       <DependentUpon>ViewCustomersPage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="register.resx">
-      <DependentUpon>register.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="viewService.resx">
       <DependentUpon>viewService.cs</DependentUpon>
     </EmbeddedResource>

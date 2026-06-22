@@ -1,62 +1,95 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using Laundry_Service_Management.models;
+using System;
 using System.Data.SqlClient;
-using Laundry_Service_Management.models;
+using System.Windows.Forms;
 
 namespace Laundry_Service_Management
 {
     public partial class addService : Form
     {
-        public addService()
+        private Service service;
+
+        public addService(Service service)
         {
             InitializeComponent();
+            this.service = service;
+            LoadData();
         }
 
-        private bool ValidateInput() { 
-            if (string.IsNullOrWhiteSpace(txtBxServiceName.Text)) { 
-                MessageBox.Show("Please enter service name."); 
-                return false; 
-            } else if (string.IsNullOrWhiteSpace(txtBxDesc.Text)) { 
-                MessageBox.Show("Please enter service description."); 
-                return false; 
-            } else if (string.IsNullOrWhiteSpace(txtBxPrice.Text)) { 
-                MessageBox.Show("Please enter price."); 
-                return false; 
-            } else if (!decimal.TryParse(txtBxPrice.Text, out _)) { 
-                MessageBox.Show("Price must be a number."); 
-                return false; 
-            } 
-            return true; 
+        private void LoadData()
+        {
+            txtBxServiceName.Text = service.name;
+            priceNumericUpDown.Value = service.price;
+            txtBxDesc.Text = service.description;
+            activeChkBx.Checked = service.status;
         }
 
-        private void insertService() { 
-            Helper.conn.Open(); 
-            SqlCommand cmd = Helper.conn.CreateCommand(); 
-            cmd.CommandType = CommandType.Text; 
-            string name = txtBxServiceName.Text; 
-            string description = txtBxDesc.Text; 
-            decimal price = Convert.ToDecimal(txtBxPrice.Text); 
-            cmd.CommandText = "INSERT INTO Services (name, description, price) " + 
-                $"VALUES ('{name}', '{description}', {price})"; 
-            cmd.ExecuteNonQuery(); 
-            Helper.conn.Close(); 
+        private bool ValidateInput()
+        {
+            if (string.IsNullOrWhiteSpace(txtBxServiceName.Text))
+            {
+                MessageBox.Show("Please enter service name.");
+                return false;
+            }
+            else if (string.IsNullOrWhiteSpace(txtBxDesc.Text))
+            {
+                MessageBox.Show("Please enter service description.");
+                return false;
+            }
+            return true;
         }
+
+        private void insertService()
+        {
+            Helper.conn.Open();
+            string query = "INSERT INTO Services (name, description, price, status) " +
+                $"VALUES (@name, @description, @price, @status)";
+            SqlCommand cmd = new SqlCommand(query, Helper.conn);
+            string name = txtBxServiceName.Text;
+            string description = txtBxDesc.Text;
+            cmd.Parameters.AddWithValue("@name", name);
+            cmd.Parameters.AddWithValue("@description", description);
+            cmd.Parameters.AddWithValue("@price", priceNumericUpDown.Value);
+            cmd.Parameters.AddWithValue("@status", activeChkBx.Checked);
+            cmd.ExecuteNonQuery();
+            Helper.conn.Close();
+        }
+
+        private void updateService()
+        {
+            Helper.conn.Open();
+            string query = "UPDATE Services SET name = @name, description = @description, price = @price, status = @status WHERE service_id = @service_id";
+            SqlCommand cmd = new SqlCommand(query, Helper.conn);
+            string name = txtBxServiceName.Text;
+            string description = txtBxDesc.Text;
+            cmd.Parameters.AddWithValue("@name", name);
+            cmd.Parameters.AddWithValue("@description", description);
+            cmd.Parameters.AddWithValue("@price", priceNumericUpDown.Value);
+            cmd.Parameters.AddWithValue("@status", activeChkBx.Checked);
+            cmd.Parameters.AddWithValue("@service_id", service.service_id);
+            cmd.ExecuteNonQuery();
+            Helper.conn.Close();
+        }
+
 
         private void addBtn_Click(object sender, EventArgs e)
         {
-            if (!ValidateInput()) { 
-                return; 
+            if (!ValidateInput())
+            {
+                return;
             }
-            
-            insertService(); 
-            MessageBox.Show("Service added successfully!"); 
+
+            if (service.service_id == 0)
+            {
+                insertService();
+                MessageBox.Show("Service added successfully!");
+            }
+            else
+            {
+                updateService();
+                MessageBox.Show("Service added successfully!");
+            }
+
             this.Close();
         }
 

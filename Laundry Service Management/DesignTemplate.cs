@@ -40,6 +40,9 @@ namespace Laundry_Service_Management
                 case "View Customers":
                     mainContentPnl.Controls.Add(new ViewCustomersPage());
                     break;
+                case "Service":
+                    mainContentPnl.Controls.Add(new viewService());
+                    break;
                 case "Booking":
                     mainContentPnl.Controls.Add(new BookingsPage());
                     break;

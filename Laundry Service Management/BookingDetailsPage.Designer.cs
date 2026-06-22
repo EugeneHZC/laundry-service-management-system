@@ -193,22 +193,26 @@
             // 
             // cancelBtn
             // 
+            this.cancelBtn.BackColor = System.Drawing.Color.RoyalBlue;
+            this.cancelBtn.ForeColor = System.Drawing.Color.White;
             this.cancelBtn.Location = new System.Drawing.Point(146, 627);
             this.cancelBtn.Name = "cancelBtn";
             this.cancelBtn.Size = new System.Drawing.Size(110, 37);
             this.cancelBtn.TabIndex = 14;
             this.cancelBtn.Text = "Cancel";
-            this.cancelBtn.UseVisualStyleBackColor = true;
+            this.cancelBtn.UseVisualStyleBackColor = false;
             this.cancelBtn.Click += new System.EventHandler(this.cancelBtn_Click);
             // 
             // saveBtn
             // 
+            this.saveBtn.BackColor = System.Drawing.Color.RoyalBlue;
+            this.saveBtn.ForeColor = System.Drawing.Color.White;
             this.saveBtn.Location = new System.Drawing.Point(365, 627);
             this.saveBtn.Name = "saveBtn";
             this.saveBtn.Size = new System.Drawing.Size(110, 37);
             this.saveBtn.TabIndex = 15;
             this.saveBtn.Text = "Save";
-            this.saveBtn.UseVisualStyleBackColor = true;
+            this.saveBtn.UseVisualStyleBackColor = false;
             this.saveBtn.Click += new System.EventHandler(this.bookBtn_Click);
             // 
             // timeOfServiceDtp
@@ -279,6 +283,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.AliceBlue;
             this.ClientSize = new System.Drawing.Size(647, 711);
             this.Controls.Add(this.statusCmbBx);
             this.Controls.Add(this.statusLbl);
@@ -302,6 +307,7 @@
             this.Controls.Add(this.serviceTypeCmbBx);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "BookingDetailsPage";
             this.Text = "Book Service";
             this.Load += new System.EventHandler(this.BookingDetailsPage_Load);

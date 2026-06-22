@@ -1508,6 +1508,8 @@ namespace Laundry_Service_Management {
             
             private global::System.Data.DataColumn columnprice;
             
+            private global::System.Data.DataColumn columnstatus;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
             public ServicesDataTable() {
@@ -1574,7 +1576,15 @@ namespace Laundry_Service_Management {
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn statusColumn {
+                get {
+                    return this.columnstatus;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1609,14 +1619,15 @@ namespace Laundry_Service_Management {
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
-            public ServicesRow AddServicesRow(string name, string description, decimal price) {
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public ServicesRow AddServicesRow(string name, string description, decimal price, string status) {
                 ServicesRow rowServicesRow = ((ServicesRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         name,
                         description,
-                        price};
+                        price,
+                        status};
                 rowServicesRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowServicesRow);
                 return rowServicesRow;
@@ -1650,6 +1661,7 @@ namespace Laundry_Service_Management {
                 this.columnname = base.Columns["name"];
                 this.columndescription = base.Columns["description"];
                 this.columnprice = base.Columns["price"];
+                this.columnstatus = base.Columns["status"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1663,6 +1675,8 @@ namespace Laundry_Service_Management {
                 base.Columns.Add(this.columndescription);
                 this.columnprice = new global::System.Data.DataColumn("price", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnprice);
+                this.columnstatus = new global::System.Data.DataColumn("status", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnstatus);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnservice_id}, true));
                 this.columnservice_id.AutoIncrement = true;
@@ -2581,7 +2595,23 @@ namespace Laundry_Service_Management {
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string status {
+                get {
+                    try {
+                        return ((string)(this[this.tableServices.statusColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'status\' in table \'Services\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableServices.statusColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool IsdescriptionNull() {
                 return this.IsNull(this.tableServices.descriptionColumn);
             }
@@ -2590,6 +2620,18 @@ namespace Laundry_Service_Management {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
             public void SetdescriptionNull() {
                 this[this.tableServices.descriptionColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsstatusNull() {
+                return this.IsNull(this.tableServices.statusColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetstatusNull() {
+                this[this.tableServices.statusColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -4153,6 +4195,7 @@ SELECT service_booking_id, amount, booking_id, service_id FROM ServiceBookings W
             tableMapping.ColumnMappings.Add("name", "name");
             tableMapping.ColumnMappings.Add("description", "description");
             tableMapping.ColumnMappings.Add("price", "price");
+            tableMapping.ColumnMappings.Add("status", "status");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;

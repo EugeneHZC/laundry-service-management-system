@@ -30,6 +30,8 @@ namespace Laundry_Service_Management
                 statusLbl.Visible = true;
                 statusCmbBx.Visible = true;
             }
+
+            dateOfServiceDtp.MinDate = DateTime.Now;
         }
 
         private bool ValidateInput()
@@ -42,6 +44,11 @@ namespace Laundry_Service_Management
             else if (string.IsNullOrEmpty(dateOfServiceDtp.Value.ToString()) || string.IsNullOrEmpty(timeOfServiceDtp.Value.ToString()))
             {
                 MessageBox.Show("Please select a valid date and time of service.");
+                return false;
+            }
+            else if (DateTime.Parse($"{dateOfServiceDtp.Value.ToString("yyyy-MM-dd")} {timeOfServiceDtp.Value.ToString("HH:mm:ss")}") < DateTime.Now)
+            {
+                MessageBox.Show("Please select a date and time of service later than the current date time.");
                 return false;
             }
             else if (!selfDeliveryRb.Checked && !deliveryToShopRb.Checked)
@@ -76,8 +83,9 @@ namespace Laundry_Service_Management
         private void LoadPage()
         {
             Helper.conn.Open();
+            // get all available services
             SqlCommand cmd = Helper.conn.CreateCommand();
-            cmd.CommandText = "SELECT * FROM Services";
+            cmd.CommandText = "SELECT * FROM Services WHERE status = 1";
             var reader = cmd.ExecuteReader();
             var services = new List<Service>();
             while (reader.Read())
@@ -103,7 +111,9 @@ namespace Laundry_Service_Management
             if (booking.booking_id != 0)
             {
                 Helper.conn.Open();
-                cmd.CommandText = $"SELECT * FROM ServiceBookings WHERE booking_id = {booking.booking_id}";
+                string query = "SELECT * FROM ServiceBookings WHERE booking_id = @booking_id";
+                cmd = new SqlCommand(query, Helper.conn);
+                cmd.Parameters.AddWithValue("@booking_id", booking.booking_id);
                 var serviceBookingsReader = cmd.ExecuteReader();
                 var selectedServices = new List<decimal>();
 
@@ -111,6 +121,8 @@ namespace Laundry_Service_Management
                 {
                     selectedServices.Add(decimal.Parse(serviceBookingsReader["service_id"].ToString()));
                 }
+
+                serviceBookingsReader.Close();
 
                 var filtered = services.Where(x => selectedServices.Contains(x.service_id)).ToList();
 
@@ -159,13 +171,21 @@ namespace Laundry_Service_Management
             var deliveryAddress = addressTxtBx.Text;
             var remarks = remarksTxtBx.Text;
             var deliveryFromShopMethod = selfPickupRb.Checked ? "Self Pickup" : "Delivery";
-            Helper.UserId = 1;
+
             Helper.conn.Open();
-            SqlCommand cmd = Helper.conn.CreateCommand();
-            cmd.CommandType = System.Data.CommandType.Text;
-            cmd.CommandText = "INSERT INTO [Bookings] (booking_date, service_time, total_amount, service_type, status, delivery_from_shop_method, delivery_address, remarks, user_id, delivery_to_shop_method) " +
+            string query = "INSERT INTO [Bookings] (booking_date, service_time, total_amount, service_type, status, delivery_from_shop_method, delivery_address, remarks, user_id, delivery_to_shop_method) " +
                 "OUTPUT INSERTED.booking_id " +
-                $"VALUES ('{bookingDate.ToString("yyyy-MM-dd HH:mm:ss")}', '{serviceTime.ToString("yyyy-MM-dd HH:mm:ss")}', {totalAmount}, '{serviceType}', 'Scheduled', '{deliveryFromShopMethod}', '{deliveryAddress}', '{remarks}', {Helper.UserId}, '{deliveryToShopMethod}')";
+                $"VALUES (@booking_date, @service_time, @total_amount, @service_type, 'Scheduled', @delivery_from_shop_method, @delivery_address, @remarks, @user_id, @delivery_to_shop_method)";
+            SqlCommand cmd = new SqlCommand(query, Helper.conn);
+            cmd.Parameters.AddWithValue("@booking_date", bookingDate.ToString("yyyy-MM-dd HH:mm:ss"));
+            cmd.Parameters.AddWithValue("@service_time", serviceTime.ToString("yyyy-MM-dd HH:mm:ss"));
+            cmd.Parameters.AddWithValue("@service_type", serviceType);
+            cmd.Parameters.AddWithValue("@total_amount", totalAmount);
+            cmd.Parameters.AddWithValue("@delivery_from_shop_method", deliveryFromShopMethod);
+            cmd.Parameters.AddWithValue("@delivery_address", deliveryAddress);
+            cmd.Parameters.AddWithValue("@remarks", remarks);
+            cmd.Parameters.AddWithValue("@user_id", Helper.UserId);
+            cmd.Parameters.AddWithValue("@delivery_to_shop_method", deliveryToShopMethod);
 
             var bookingId = (decimal)cmd.ExecuteScalar();
             Helper.conn.Close();
@@ -180,10 +200,12 @@ namespace Laundry_Service_Management
 
             foreach (var s in services)
             {
-                SqlCommand cmd = Helper.conn.CreateCommand();
-                cmd.CommandType = System.Data.CommandType.Text;
-                cmd.CommandText = "INSERT INTO ServiceBookings (amount, booking_id, service_id) " +
-                    $"VALUES ({s.price}, {bookingId}, {s.service_id})";
+                string query = "INSERT INTO ServiceBookings (amount, booking_id, service_id) " +
+                    $"VALUES (@price, @booking_id, @service_id)";
+                SqlCommand cmd = new SqlCommand(query, Helper.conn);
+                cmd.Parameters.AddWithValue("@price", s.price);
+                cmd.Parameters.AddWithValue("@booking_id", bookingId);
+                cmd.Parameters.AddWithValue("@service_id", s.service_id);
                 cmd.ExecuteNonQuery();
                 total += s.price;
             }
@@ -195,10 +217,11 @@ namespace Laundry_Service_Management
         private void updateBookingAmount(decimal bookingId, decimal total)
         {
             Helper.conn.Open();
-            SqlCommand sqlCommand = Helper.conn.CreateCommand();
-            sqlCommand.CommandType = CommandType.Text;
-            sqlCommand.CommandText = $"UPDATE [Bookings] SET total_amount = {total} WHERE booking_id = {bookingId}";
-            sqlCommand.ExecuteNonQuery();
+            string query = "UPDATE [Bookings] SET total_amount = @total WHERE booking_id = @booking_id";
+            SqlCommand cmd = new SqlCommand(query, Helper.conn);
+            cmd.Parameters.AddWithValue("@total", total);
+            cmd.Parameters.AddWithValue("@booking_id", bookingId);
+            cmd.ExecuteNonQuery();
             Helper.conn.Close();
         }
 
@@ -206,11 +229,12 @@ namespace Laundry_Service_Management
         {
             Helper.conn.Open();
 
-            SqlCommand sqlCommand = Helper.conn.CreateCommand();
-            sqlCommand.CommandType = CommandType.Text;
             var status = statusCmbBx.SelectedItem.ToString();
-            sqlCommand.CommandText = $"UPDATE [Bookings] SET status = '{status}' WHERE booking_id = {booking.booking_id}";
-            sqlCommand.ExecuteNonQuery();
+            string query = "UPDATE [Bookings] SET status = @status WHERE booking_id = @booking_id";
+            SqlCommand cmd = new SqlCommand(query, Helper.conn);
+            cmd.Parameters.AddWithValue("@status", status);
+            cmd.Parameters.AddWithValue("@booking_id", booking.booking_id);
+            cmd.ExecuteNonQuery();
 
             Helper.conn.Close();
         }
