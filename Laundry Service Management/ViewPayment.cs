@@ -117,6 +117,7 @@ namespace Laundry_Service_Management
                 this.Hide();
                 new PaymentCustomer(payment, 0).ShowDialog();
                 this.Show();
+                LoadData();
             }
         }
     }

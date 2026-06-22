@@ -90,7 +90,7 @@ namespace Laundry_Service_Management
 
         private void servicesDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex == 5 && e.RowIndex > 0)
+            if (e.ColumnIndex == 5 && e.RowIndex >= 0)
             {
                 Service service = servicesDataGridView.Rows[e.RowIndex].DataBoundItem as Service;
                 new addService(service).ShowDialog();
