@@ -46,8 +46,19 @@
             this.usersTableAdapter = new Laundry_Service_Management.LaundryServiceManagementDbDataSetTableAdapters.UsersTableAdapter();
             this.joinDateTxtBx = new System.Windows.Forms.TextBox();
             this.joinDateLbl = new System.Windows.Forms.Label();
+            this.changePasswordBtn = new System.Windows.Forms.Button();
+            this.changePasswordgGrpBx = new System.Windows.Forms.GroupBox();
+            this.newPasswordTxtBx = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.confirmPasswordTxtBx = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.changeBtn = new System.Windows.Forms.Button();
+            this.cancelChangeBtn = new System.Windows.Forms.Button();
+            this.oldPasswordTxtBx = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.laundryServiceManagementDbDataSet)).BeginInit();
+            this.changePasswordgGrpBx.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -159,24 +170,28 @@
             // 
             // cancelBtn
             // 
+            this.cancelBtn.BackColor = System.Drawing.Color.RoyalBlue;
             this.cancelBtn.Enabled = false;
-            this.cancelBtn.Location = new System.Drawing.Point(113, 345);
+            this.cancelBtn.ForeColor = System.Drawing.Color.White;
+            this.cancelBtn.Location = new System.Drawing.Point(120, 342);
             this.cancelBtn.Name = "cancelBtn";
             this.cancelBtn.Size = new System.Drawing.Size(100, 37);
             this.cancelBtn.TabIndex = 11;
             this.cancelBtn.Text = "Cancel";
-            this.cancelBtn.UseVisualStyleBackColor = true;
+            this.cancelBtn.UseVisualStyleBackColor = false;
             this.cancelBtn.Click += new System.EventHandler(this.cancelBtn_Click);
             // 
             // saveBtn
             // 
+            this.saveBtn.BackColor = System.Drawing.Color.RoyalBlue;
             this.saveBtn.Enabled = false;
-            this.saveBtn.Location = new System.Drawing.Point(263, 345);
+            this.saveBtn.ForeColor = System.Drawing.Color.White;
+            this.saveBtn.Location = new System.Drawing.Point(237, 342);
             this.saveBtn.Name = "saveBtn";
             this.saveBtn.Size = new System.Drawing.Size(100, 37);
             this.saveBtn.TabIndex = 12;
             this.saveBtn.Text = "Save";
-            this.saveBtn.UseVisualStyleBackColor = true;
+            this.saveBtn.UseVisualStyleBackColor = false;
             this.saveBtn.Click += new System.EventHandler(this.saveBtn_Click);
             // 
             // usersTableAdapter
@@ -201,10 +216,118 @@
             this.joinDateLbl.TabIndex = 13;
             this.joinDateLbl.Text = "Join Date:";
             // 
+            // changePasswordBtn
+            // 
+            this.changePasswordBtn.BackColor = System.Drawing.Color.RoyalBlue;
+            this.changePasswordBtn.ForeColor = System.Drawing.Color.White;
+            this.changePasswordBtn.Location = new System.Drawing.Point(120, 397);
+            this.changePasswordBtn.Name = "changePasswordBtn";
+            this.changePasswordBtn.Size = new System.Drawing.Size(217, 37);
+            this.changePasswordBtn.TabIndex = 15;
+            this.changePasswordBtn.Text = "Change Password";
+            this.changePasswordBtn.UseVisualStyleBackColor = false;
+            this.changePasswordBtn.Click += new System.EventHandler(this.changePasswordBtn_Click);
+            // 
+            // changePasswordgGrpBx
+            // 
+            this.changePasswordgGrpBx.Controls.Add(this.oldPasswordTxtBx);
+            this.changePasswordgGrpBx.Controls.Add(this.label6);
+            this.changePasswordgGrpBx.Controls.Add(this.changeBtn);
+            this.changePasswordgGrpBx.Controls.Add(this.cancelChangeBtn);
+            this.changePasswordgGrpBx.Controls.Add(this.confirmPasswordTxtBx);
+            this.changePasswordgGrpBx.Controls.Add(this.label5);
+            this.changePasswordgGrpBx.Controls.Add(this.newPasswordTxtBx);
+            this.changePasswordgGrpBx.Controls.Add(this.label7);
+            this.changePasswordgGrpBx.Location = new System.Drawing.Point(487, 103);
+            this.changePasswordgGrpBx.Name = "changePasswordgGrpBx";
+            this.changePasswordgGrpBx.Size = new System.Drawing.Size(386, 276);
+            this.changePasswordgGrpBx.TabIndex = 16;
+            this.changePasswordgGrpBx.TabStop = false;
+            this.changePasswordgGrpBx.Text = "Change Password";
+            this.changePasswordgGrpBx.Visible = false;
+            // 
+            // newPasswordTxtBx
+            // 
+            this.newPasswordTxtBx.Location = new System.Drawing.Point(162, 85);
+            this.newPasswordTxtBx.Name = "newPasswordTxtBx";
+            this.newPasswordTxtBx.Size = new System.Drawing.Size(195, 22);
+            this.newPasswordTxtBx.TabIndex = 18;
+            this.newPasswordTxtBx.UseSystemPasswordChar = true;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(26, 88);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(100, 16);
+            this.label7.TabIndex = 17;
+            this.label7.Text = "New Password:";
+            // 
+            // confirmPasswordTxtBx
+            // 
+            this.confirmPasswordTxtBx.Location = new System.Drawing.Point(162, 132);
+            this.confirmPasswordTxtBx.Name = "confirmPasswordTxtBx";
+            this.confirmPasswordTxtBx.Size = new System.Drawing.Size(195, 22);
+            this.confirmPasswordTxtBx.TabIndex = 20;
+            this.confirmPasswordTxtBx.UseSystemPasswordChar = true;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(26, 135);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(118, 16);
+            this.label5.TabIndex = 19;
+            this.label5.Text = "Confirm Password:";
+            // 
+            // changeBtn
+            // 
+            this.changeBtn.BackColor = System.Drawing.Color.RoyalBlue;
+            this.changeBtn.ForeColor = System.Drawing.Color.White;
+            this.changeBtn.Location = new System.Drawing.Point(202, 189);
+            this.changeBtn.Name = "changeBtn";
+            this.changeBtn.Size = new System.Drawing.Size(100, 37);
+            this.changeBtn.TabIndex = 18;
+            this.changeBtn.Text = "Change";
+            this.changeBtn.UseVisualStyleBackColor = false;
+            this.changeBtn.Click += new System.EventHandler(this.changeBtn_Click);
+            // 
+            // cancelChangeBtn
+            // 
+            this.cancelChangeBtn.BackColor = System.Drawing.Color.RoyalBlue;
+            this.cancelChangeBtn.ForeColor = System.Drawing.Color.White;
+            this.cancelChangeBtn.Location = new System.Drawing.Point(85, 189);
+            this.cancelChangeBtn.Name = "cancelChangeBtn";
+            this.cancelChangeBtn.Size = new System.Drawing.Size(100, 37);
+            this.cancelChangeBtn.TabIndex = 17;
+            this.cancelChangeBtn.Text = "Cancel";
+            this.cancelChangeBtn.UseVisualStyleBackColor = false;
+            this.cancelChangeBtn.Click += new System.EventHandler(this.cancelChangeBtn_Click);
+            // 
+            // oldPasswordTxtBx
+            // 
+            this.oldPasswordTxtBx.Location = new System.Drawing.Point(162, 40);
+            this.oldPasswordTxtBx.Name = "oldPasswordTxtBx";
+            this.oldPasswordTxtBx.Size = new System.Drawing.Size(195, 22);
+            this.oldPasswordTxtBx.TabIndex = 22;
+            this.oldPasswordTxtBx.UseSystemPasswordChar = true;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(26, 43);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(94, 16);
+            this.label6.TabIndex = 21;
+            this.label6.Text = "Old Password:";
+            // 
             // ProfilePage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.AliceBlue;
+            this.Controls.Add(this.changePasswordgGrpBx);
+            this.Controls.Add(this.changePasswordBtn);
             this.Controls.Add(this.joinDateTxtBx);
             this.Controls.Add(this.joinDateLbl);
             this.Controls.Add(this.saveBtn);
@@ -223,6 +346,8 @@
             this.Size = new System.Drawing.Size(1109, 723);
             ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.laundryServiceManagementDbDataSet)).EndInit();
+            this.changePasswordgGrpBx.ResumeLayout(false);
+            this.changePasswordgGrpBx.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -247,5 +372,15 @@
         private LaundryServiceManagementDbDataSetTableAdapters.UsersTableAdapter usersTableAdapter;
         private System.Windows.Forms.TextBox joinDateTxtBx;
         private System.Windows.Forms.Label joinDateLbl;
+        private System.Windows.Forms.Button changePasswordBtn;
+        private System.Windows.Forms.GroupBox changePasswordgGrpBx;
+        private System.Windows.Forms.TextBox oldPasswordTxtBx;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button changeBtn;
+        private System.Windows.Forms.Button cancelChangeBtn;
+        private System.Windows.Forms.TextBox confirmPasswordTxtBx;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox newPasswordTxtBx;
+        private System.Windows.Forms.Label label7;
     }
 }

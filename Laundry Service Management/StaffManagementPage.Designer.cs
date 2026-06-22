@@ -46,7 +46,7 @@
             this.titleLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.titleLbl.Location = new System.Drawing.Point(37, 32);
             this.titleLbl.Name = "titleLbl";
-            this.titleLbl.Size = new System.Drawing.Size(190, 25);
+            this.titleLbl.Size = new System.Drawing.Size(188, 25);
             this.titleLbl.TabIndex = 0;
             this.titleLbl.Text = "Staff Management";
             // 
@@ -55,7 +55,7 @@
             this.searchLbl.AutoSize = true;
             this.searchLbl.Location = new System.Drawing.Point(39, 79);
             this.searchLbl.Name = "searchLbl";
-            this.searchLbl.Size = new System.Drawing.Size(263, 16);
+            this.searchLbl.Size = new System.Drawing.Size(266, 16);
             this.searchLbl.TabIndex = 1;
             this.searchLbl.Text = "Search by ID/name/gender/phone/join date";
             // 
@@ -169,6 +169,7 @@
             this.passwordTxtBx.Name = "passwordTxtBx";
             this.passwordTxtBx.Size = new System.Drawing.Size(232, 22);
             this.passwordTxtBx.TabIndex = 7;
+            this.passwordTxtBx.UseSystemPasswordChar = true;
             // 
             // passwordLbl
             // 
@@ -191,7 +192,7 @@
             this.phoneLbl.AutoSize = true;
             this.phoneLbl.Location = new System.Drawing.Point(27, 157);
             this.phoneLbl.Name = "phoneLbl";
-            this.phoneLbl.Size = new System.Drawing.Size(70, 16);
+            this.phoneLbl.Size = new System.Drawing.Size(67, 16);
             this.phoneLbl.TabIndex = 4;
             this.phoneLbl.Text = "Phone No";
             // 
@@ -236,6 +237,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.AliceBlue;
             this.Controls.Add(this.formGroupBx);
             this.Controls.Add(this.staffDataGridView);
             this.Controls.Add(this.searchTxtBx);
@@ -248,6 +250,7 @@
             this.formGroupBx.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
+
         }
 
         #endregion

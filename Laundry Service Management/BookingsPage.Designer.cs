@@ -73,12 +73,14 @@
             // 
             // bookAppointmentBtn
             // 
+            this.bookAppointmentBtn.BackColor = System.Drawing.Color.RoyalBlue;
+            this.bookAppointmentBtn.ForeColor = System.Drawing.Color.White;
             this.bookAppointmentBtn.Location = new System.Drawing.Point(824, 91);
             this.bookAppointmentBtn.Name = "bookAppointmentBtn";
             this.bookAppointmentBtn.Size = new System.Drawing.Size(167, 41);
             this.bookAppointmentBtn.TabIndex = 3;
             this.bookAppointmentBtn.Text = "Book Appointment";
-            this.bookAppointmentBtn.UseVisualStyleBackColor = true;
+            this.bookAppointmentBtn.UseVisualStyleBackColor = false;
             this.bookAppointmentBtn.Click += new System.EventHandler(this.bookAppointmentBtn_Click);
             // 
             // label4
@@ -246,6 +248,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.AliceBlue;
             this.Controls.Add(this.bookingsDataGridView);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.bookAppointmentBtn);

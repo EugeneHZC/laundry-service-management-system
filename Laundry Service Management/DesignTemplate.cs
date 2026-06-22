@@ -18,7 +18,7 @@ namespace Laundry_Service_Management
                 treeView1.Nodes.RemoveByKey("Staff Management");
             }
 
-            if (Helper.UserRole != "Staff")
+            if (Helper.UserRole == "Customer")
             {
                 treeView1.Nodes.RemoveByKey("View Customers");
             }
@@ -44,6 +44,15 @@ namespace Laundry_Service_Management
                     break;
                 case "Profile":
                     mainContentPnl.Controls.Add(new ProfilePage());
+                    break;
+                case "Logout":
+                    if (MessageBox.Show("Are you sure you want to logout?", "Logout", MessageBoxButtons.OKCancel) == DialogResult.OK)
+                    {
+                        MessageBox.Show("Logged out successfully.");
+                        Helper.UserId = 0;
+                        Helper.UserRole = "";
+                        this.Close();
+                    }
                     break;
                 default:
                     break;

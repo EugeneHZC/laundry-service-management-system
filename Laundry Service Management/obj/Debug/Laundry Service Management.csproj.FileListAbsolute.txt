@@ -53,3 +53,5 @@ C:\Users\ainat\OneDrive\Documents\SEM4_26\EVENT\Project_EDP\laundry-service-mana
 C:\Users\User\Desktop\UTeM\Sem 4\Event-Driven Programming\Project\Laundry Service Management\Laundry Service Management\obj\Debug\Laundry_Service_Management.login.resources
 C:\Users\User\Desktop\UTeM\Sem 4\Event-Driven Programming\Project\Laundry Service Management\Laundry Service Management\obj\Debug\Laundry_Service_Management.register.resources
 >>>>>>> d2e3d5aa04b566962a459dcff2604824dbc2b0f7
+C:\Users\User\Desktop\UTeM\Sem 4\Event-Driven Programming\Project\Laundry Service Management\Laundry Service Management\obj\Debug\Laundry_Service_Management.StaffManagementPage.resources
+C:\Users\User\Desktop\UTeM\Sem 4\Event-Driven Programming\Project\Laundry Service Management\Laundry Service Management\obj\Debug\Laundry_Service_Management.ViewCustomersPage.resources
