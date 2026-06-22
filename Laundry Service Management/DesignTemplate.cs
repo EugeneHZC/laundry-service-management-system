@@ -16,7 +16,6 @@ namespace Laundry_Service_Management
             {
                 treeView1.Nodes.RemoveByKey("Dashboard");
                 treeView1.Nodes.RemoveByKey("Staff Management");
-                treeView1.Nodes.RemoveByKey("History payment");
             }
 
             if (Helper.UserRole == "Customer")
@@ -42,6 +41,9 @@ namespace Laundry_Service_Management
                     break;
                 case "Service":
                     mainContentPnl.Controls.Add(new viewService());
+                    break;
+                case "History Payment":
+                    mainContentPnl.Controls.Add(new ViewPayment());
                     break;
                 case "Booking":
                     mainContentPnl.Controls.Add(new BookingsPage());

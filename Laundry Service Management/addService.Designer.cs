@@ -124,6 +124,11 @@
             // 
             this.priceNumericUpDown.DecimalPlaces = 2;
             this.priceNumericUpDown.Location = new System.Drawing.Point(339, 118);
+            this.priceNumericUpDown.Maximum = new decimal(new int[] {
+            1316134912,
+            2328,
+            0,
+            0});
             this.priceNumericUpDown.Name = "priceNumericUpDown";
             this.priceNumericUpDown.Size = new System.Drawing.Size(352, 22);
             this.priceNumericUpDown.TabIndex = 8;

@@ -93,6 +93,16 @@ namespace Laundry_Service_Management.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap qr_sample {
+            get {
+                object obj = ResourceManager.GetObject("qr_sample", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Screenshot_2026_06_05_160612 {
             get {
                 object obj = ResourceManager.GetObject("Screenshot 2026-06-05 160612", resourceCulture);

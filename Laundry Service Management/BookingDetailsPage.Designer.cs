@@ -211,7 +211,7 @@
             this.saveBtn.Name = "saveBtn";
             this.saveBtn.Size = new System.Drawing.Size(110, 37);
             this.saveBtn.TabIndex = 15;
-            this.saveBtn.Text = "Save";
+            this.saveBtn.Text = "Pay";
             this.saveBtn.UseVisualStyleBackColor = false;
             this.saveBtn.Click += new System.EventHandler(this.bookBtn_Click);
             // 
@@ -243,7 +243,8 @@
             // 
             // dateOfServiceDtp
             // 
-            this.dateOfServiceDtp.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateOfServiceDtp.CustomFormat = "dd/MM/yyyy";
+            this.dateOfServiceDtp.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateOfServiceDtp.Location = new System.Drawing.Point(321, 91);
             this.dateOfServiceDtp.Name = "dateOfServiceDtp";
             this.dateOfServiceDtp.Size = new System.Drawing.Size(203, 25);

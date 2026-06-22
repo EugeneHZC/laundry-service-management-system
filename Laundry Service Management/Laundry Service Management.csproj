@@ -57,8 +57,8 @@
     <Reference Include="System">
       <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\System.dll</HintPath>
     </Reference>
-	<Reference Include="System.Configuration" />
-	<Reference Include="System.Core" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
     <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -135,12 +135,12 @@
     <Compile Include="ProfilePage.Designer.cs">
       <DependentUpon>ProfilePage.cs</DependentUpon>
     </Compile>
-	  <Compile Include="PaymentCustomer.cs">
-		  <SubType>Form</SubType>
-	  </Compile>
-	  <Compile Include="PaymentCustomer.Designer.cs">
-		  <DependentUpon>PaymentCustomer.cs</DependentUpon>
-	  </Compile>
+    <Compile Include="PaymentCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PaymentCustomer.Designer.cs">
+      <DependentUpon>PaymentCustomer.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="register.cs">
@@ -164,12 +164,12 @@
     <EmbeddedResource Include="addService.resx">
       <DependentUpon>addService.cs</DependentUpon>
     </EmbeddedResource>
-	  <Compile Include="ViewPayment.cs">
-		  <SubType>UserControl</SubType>
-	  </Compile>
-	  <Compile Include="ViewPayment.Designer.cs">
-		  <DependentUpon>ViewPayment.cs</DependentUpon>
-	  </Compile>
+    <Compile Include="ViewPayment.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ViewPayment.Designer.cs">
+      <DependentUpon>ViewPayment.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="BookingDetailsPage.resx">
       <DependentUpon>BookingDetailsPage.cs</DependentUpon>
     </EmbeddedResource>
@@ -209,9 +209,9 @@
     <EmbeddedResource Include="viewService.resx">
       <DependentUpon>viewService.cs</DependentUpon>
     </EmbeddedResource>
-	  <EmbeddedResource Include="ViewPayment.resx">
-		  <DependentUpon>ViewPayment.cs</DependentUpon>
-	  </EmbeddedResource>
+    <EmbeddedResource Include="ViewPayment.resx">
+      <DependentUpon>ViewPayment.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="LaundryServiceManagementDbDataSet.xsc">
       <DependentUpon>LaundryServiceManagementDbDataSet.xsd</DependentUpon>
     </None>
@@ -249,6 +249,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>LaundryServiceManagementDb.mdf</DependentUpon>
     </Content>
+    <None Include="Resources\qr_sample.png" />
     <None Include="Resources\laundrypic.png" />
     <None Include="Resources\Screenshot_2026-06-05_160612-removebg-preview.png" />
     <None Include="Resources\Screenshot 2026-06-05 160612.png" />
