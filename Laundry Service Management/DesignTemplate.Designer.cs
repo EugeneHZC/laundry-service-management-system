@@ -33,7 +33,7 @@
             System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("View Customers");
             System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("Service");
             System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("Booking");
-            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("History payment");
+            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("History Payment");
             System.Windows.Forms.TreeNode treeNode7 = new System.Windows.Forms.TreeNode("Profile");
             System.Windows.Forms.TreeNode treeNode8 = new System.Windows.Forms.TreeNode("Logout");
             this.treeView1 = new System.Windows.Forms.TreeView();
@@ -58,8 +58,8 @@
             treeNode4.Text = "Service";
             treeNode5.Name = "Booking";
             treeNode5.Text = "Booking";
-            treeNode6.Name = "History payment";
-            treeNode6.Text = "History payment";
+            treeNode6.Name = "History Payment";
+            treeNode6.Text = "History Payment";
             treeNode7.Name = "Profile";
             treeNode7.Text = "Profile";
             treeNode8.Name = "Logout";
@@ -84,6 +84,7 @@
             this.mainContentPnl.Name = "mainContentPnl";
             this.mainContentPnl.Size = new System.Drawing.Size(1162, 748);
             this.mainContentPnl.TabIndex = 4;
+            this.mainContentPnl.Paint += new System.Windows.Forms.PaintEventHandler(this.mainContentPnl_Paint);
             // 
             // pictureBox2
             // 
@@ -97,6 +98,7 @@
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 3;
             this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // DesignTemplate
             // 

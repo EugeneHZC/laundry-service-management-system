@@ -99,5 +99,10 @@ namespace Laundry_Service_Management
             frm.ShowDialog();
             this.Show();
         }
+
+        private void login_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

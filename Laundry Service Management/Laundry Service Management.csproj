@@ -12,6 +12,7 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -24,7 +25,6 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -57,6 +57,7 @@
     <Reference Include="System">
       <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\System.dll</HintPath>
     </Reference>
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
@@ -125,6 +126,7 @@
       <DependentUpon>login.cs</DependentUpon>
     </Compile>
     <Compile Include="models\Booking.cs" />
+    <Compile Include="models\Payment.cs" />
     <Compile Include="models\Service.cs" />
     <Compile Include="models\User.cs" />
     <Compile Include="ProfilePage.cs">
@@ -132,6 +134,12 @@
     </Compile>
     <Compile Include="ProfilePage.Designer.cs">
       <DependentUpon>ProfilePage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PaymentCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PaymentCustomer.Designer.cs">
+      <DependentUpon>PaymentCustomer.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -156,6 +164,12 @@
     <EmbeddedResource Include="addService.resx">
       <DependentUpon>addService.cs</DependentUpon>
     </EmbeddedResource>
+    <Compile Include="ViewPayment.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ViewPayment.Designer.cs">
+      <DependentUpon>ViewPayment.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="BookingDetailsPage.resx">
       <DependentUpon>BookingDetailsPage.cs</DependentUpon>
     </EmbeddedResource>
@@ -174,6 +188,9 @@
     <EmbeddedResource Include="login.resx">
       <DependentUpon>login.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PaymentCustomer.resx">
+      <DependentUpon>PaymentCustomer.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
@@ -189,11 +206,11 @@
     <EmbeddedResource Include="ViewCustomersPage.resx">
       <DependentUpon>ViewCustomersPage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="register.resx">
-      <DependentUpon>register.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="viewService.resx">
       <DependentUpon>viewService.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewPayment.resx">
+      <DependentUpon>ViewPayment.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="LaundryServiceManagementDbDataSet.xsc">
       <DependentUpon>LaundryServiceManagementDbDataSet.xsd</DependentUpon>
@@ -232,6 +249,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>LaundryServiceManagementDb.mdf</DependentUpon>
     </Content>
+    <None Include="Resources\qr_sample.png" />
     <None Include="Resources\laundrypic.png" />
     <None Include="Resources\Screenshot_2026-06-05_160612-removebg-preview.png" />
     <None Include="Resources\Screenshot 2026-06-05 160612.png" />

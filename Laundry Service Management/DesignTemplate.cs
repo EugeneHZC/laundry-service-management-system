@@ -39,6 +39,12 @@ namespace Laundry_Service_Management
                 case "View Customers":
                     mainContentPnl.Controls.Add(new ViewCustomersPage());
                     break;
+                case "Service":
+                    mainContentPnl.Controls.Add(new viewService());
+                    break;
+                case "History Payment":
+                    mainContentPnl.Controls.Add(new ViewPayment());
+                    break;
                 case "Booking":
                     mainContentPnl.Controls.Add(new BookingsPage());
                     break;
@@ -57,6 +63,16 @@ namespace Laundry_Service_Management
                 default:
                     break;
             }
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void mainContentPnl_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
