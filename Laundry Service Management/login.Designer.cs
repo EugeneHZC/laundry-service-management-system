@@ -119,6 +119,7 @@
             this.txtBxPassword.Name = "txtBxPassword";
             this.txtBxPassword.Size = new System.Drawing.Size(396, 22);
             this.txtBxPassword.TabIndex = 10;
+            this.txtBxPassword.UseSystemPasswordChar = true;
             // 
             // Password
             // 
@@ -222,8 +223,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panel1);
             this.Name = "login";
-            this.Text = "login";
-            this.Load += new System.EventHandler(this.login_Load);
+            this.Text = "Login";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

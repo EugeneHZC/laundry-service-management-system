@@ -30,6 +30,8 @@
         {
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.rdBtnFemale = new System.Windows.Forms.RadioButton();
+            this.rdBtnMale = new System.Windows.Forms.RadioButton();
             this.linkLblLogin = new System.Windows.Forms.LinkLabel();
             this.label7 = new System.Windows.Forms.Label();
             this.btnregister = new System.Windows.Forms.Button();
@@ -42,8 +44,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.rdBtnMale = new System.Windows.Forms.RadioButton();
-            this.rdBtnFemale = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -79,6 +79,30 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(480, 600);
             this.panel1.TabIndex = 1;
+            // 
+            // rdBtnFemale
+            // 
+            this.rdBtnFemale.AutoSize = true;
+            this.rdBtnFemale.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdBtnFemale.Location = new System.Drawing.Point(269, 240);
+            this.rdBtnFemale.Name = "rdBtnFemale";
+            this.rdBtnFemale.Size = new System.Drawing.Size(78, 22);
+            this.rdBtnFemale.TabIndex = 17;
+            this.rdBtnFemale.TabStop = true;
+            this.rdBtnFemale.Text = "Female";
+            this.rdBtnFemale.UseVisualStyleBackColor = true;
+            // 
+            // rdBtnMale
+            // 
+            this.rdBtnMale.AutoSize = true;
+            this.rdBtnMale.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdBtnMale.Location = new System.Drawing.Point(145, 240);
+            this.rdBtnMale.Name = "rdBtnMale";
+            this.rdBtnMale.Size = new System.Drawing.Size(61, 22);
+            this.rdBtnMale.TabIndex = 16;
+            this.rdBtnMale.TabStop = true;
+            this.rdBtnMale.Text = "Male";
+            this.rdBtnMale.UseVisualStyleBackColor = true;
             // 
             // linkLblLogin
             // 
@@ -118,6 +142,7 @@
             this.txtBxPassword.Name = "txtBxPassword";
             this.txtBxPassword.Size = new System.Drawing.Size(396, 22);
             this.txtBxPassword.TabIndex = 12;
+            this.txtBxPassword.UseSystemPasswordChar = true;
             // 
             // txtBxPhoneNum
             // 
@@ -194,30 +219,6 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "CREATE ACCOUNT";
             // 
-            // rdBtnMale
-            // 
-            this.rdBtnMale.AutoSize = true;
-            this.rdBtnMale.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdBtnMale.Location = new System.Drawing.Point(145, 240);
-            this.rdBtnMale.Name = "rdBtnMale";
-            this.rdBtnMale.Size = new System.Drawing.Size(61, 22);
-            this.rdBtnMale.TabIndex = 16;
-            this.rdBtnMale.TabStop = true;
-            this.rdBtnMale.Text = "Male";
-            this.rdBtnMale.UseVisualStyleBackColor = true;
-            // 
-            // rdBtnFemale
-            // 
-            this.rdBtnFemale.AutoSize = true;
-            this.rdBtnFemale.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdBtnFemale.Location = new System.Drawing.Point(269, 240);
-            this.rdBtnFemale.Name = "rdBtnFemale";
-            this.rdBtnFemale.Size = new System.Drawing.Size(78, 22);
-            this.rdBtnFemale.TabIndex = 17;
-            this.rdBtnFemale.TabStop = true;
-            this.rdBtnFemale.Text = "Female";
-            this.rdBtnFemale.UseVisualStyleBackColor = true;
-            // 
             // register
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -227,7 +228,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pictureBox1);
             this.Name = "register";
-            this.Text = "register";
+            this.Text = "Register";
             this.Load += new System.EventHandler(this.register_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);

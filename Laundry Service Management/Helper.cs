@@ -1,5 +1,7 @@
 ﻿using System.Data.SqlClient;
-using System.Configuration;
+using System.Linq;
+using System.Security.Cryptography;
+using System.Text;
 
 namespace Laundry_Service_Management
 {
@@ -9,5 +11,12 @@ namespace Laundry_Service_Management
         public static string UserRole { get; set; } = "Admin";
 
         public static SqlConnection conn = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"C:\\Users\\User\\Desktop\\UTeM\\Sem 4\\Event-Driven Programming\\Project\\Laundry Service Management\\Laundry Service Management\\LaundryServiceManagementDb.mdf\";Integrated Security=True");
+
+        public static string hash(string text)
+        {
+            SHA256 sha256 = SHA256.Create();
+            var bytes = sha256.ComputeHash(Encoding.UTF8.GetBytes(text));
+            return string.Concat(bytes.Select(x => x.ToString("x2")));
+        }
     }
 }
