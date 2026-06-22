@@ -13,7 +13,7 @@ namespace Laundry_Service_Management
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new DesignTemplate());
+            Application.Run(new login());
         }
     }
 }
