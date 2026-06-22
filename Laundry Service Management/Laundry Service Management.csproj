@@ -100,6 +100,18 @@
     <Compile Include="DesignTemplate.Designer.cs">
       <DependentUpon>DesignTemplate.cs</DependentUpon>
     </Compile>
+    <Compile Include="StaffManagementPage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="StaffManagementPage.Designer.cs">
+      <DependentUpon>StaffManagementPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewCustomersPage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ViewCustomersPage.Designer.cs">
+      <DependentUpon>ViewCustomersPage.cs</DependentUpon>
+    </Compile>
     <Compile Include="Helper.cs" />
     <Compile Include="LaundryServiceManagementDbDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -170,6 +182,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="register.resx">
       <DependentUpon>register.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StaffManagementPage.resx">
+      <DependentUpon>StaffManagementPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewCustomersPage.resx">
+      <DependentUpon>ViewCustomersPage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="register.resx">
       <DependentUpon>register.cs</DependentUpon>

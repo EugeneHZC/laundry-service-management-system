@@ -6,7 +6,6 @@ namespace Laundry_Service_Management
 {
     public partial class login : Form
     {
-        SqlConnection connection = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"C:\\Users\\ainat\\OneDrive\\Documents\\SEM4_26\\EVENT\\Project_EDP\\laundry-service-management-system\\Laundry Service Management\\LaundryServiceManagementDb.mdf\";Integrated Security=True");
         public login()
         {
             InitializeComponent();
@@ -48,64 +47,57 @@ namespace Laundry_Service_Management
                      AND password=@password
                      AND role=@role";
 
-            SqlCommand cmd = new SqlCommand(query, connection);
+            SqlCommand cmd = new SqlCommand(query, Helper.conn);
 
             cmd.Parameters.AddWithValue("@name", name);
-            cmd.Parameters.AddWithValue("@password", password);
+            cmd.Parameters.AddWithValue("@password", Helper.hash(password));
             cmd.Parameters.AddWithValue("@role", role);
+
+            Form frm = new DesignTemplate();
 
             try
             {
-                connection.Open();
+                Helper.conn.Open();
 
                 SqlDataReader dr = cmd.ExecuteReader();
 
                 if (dr.Read())
                 {
                     MessageBox.Show("Login Successful!");
+                    Helper.UserId = decimal.Parse(dr["user_id"].ToString());
+                    Helper.UserRole = dr["role"].ToString();
 
-                    if (role == "Customer")
-                    {
-                        //Service frm = new Service ();
-                        //frm.Show();
-                    }
-                    else if (role == "Staff")
-                    {
-                        Dashboard frm = new Dashboard();
-                        frm.Show();
-                    }
-                    else if (role == "Admin")
-                    {
-                        Dashboard frm = new Dashboard();
-                        frm.Show();
-                    }
-
+                    Helper.conn.Close();
                     this.Hide();
+                    frm.ShowDialog();
+                    this.Show();
+
+                    txtBxName.Text = "";
+                    txtBxPassword.Text = "";
+                    rdBtnCustomer.Checked = false;
+                    rdBtnStaff.Checked = false;
+                    rdBtnAdmin.Checked = false;
                 }
                 else
                 {
-                    MessageBox.Show("Invalid Name, Password or Role.");
+                    MessageBox.Show("Invalid name, password or role.");
                 }
 
                 dr.Close();
+                Helper.conn.Close();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
-            finally
-            {
-                connection.Close();
-            }
-
-
         }
 
         private void linkLblRegister_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            register frm = new register();
-            frm.Show();
             this.Hide();
+            register frm = new register();
+            frm.ShowDialog();
+            this.Show();
         }
     }
 }

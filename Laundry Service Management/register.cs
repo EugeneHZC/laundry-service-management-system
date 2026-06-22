@@ -1,19 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Windows.Forms;
 
 namespace Laundry_Service_Management
 {
     public partial class register : Form
     {
-        SqlConnection connection = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"C:\\Users\\ainat\\OneDrive\\Documents\\SEM4_26\\EVENT\\Project_EDP\\laundry-service-management-system\\Laundry Service Management\\LaundryServiceManagementDb.mdf\";Integrated Security=True");
         public register()
         {
             InitializeComponent();
@@ -46,12 +38,12 @@ namespace Laundry_Service_Management
                     VALUES
                     (@name, @gender, @phone, @password, @role, @joinDate)";
 
-            SqlCommand cmd = new SqlCommand(query, connection);
+            SqlCommand cmd = new SqlCommand(query, Helper.conn);
 
             cmd.Parameters.AddWithValue("@name", txtBxName.Text.Trim());
             cmd.Parameters.AddWithValue("@gender", gender);
             cmd.Parameters.AddWithValue("@phone", txtBxPhoneNum.Text.Trim());
-            cmd.Parameters.AddWithValue("@password", txtBxPassword.Text.Trim());
+            cmd.Parameters.AddWithValue("@password", Helper.hash(txtBxPassword.Text.Trim()));
 
             // Customer register sendiri
             cmd.Parameters.AddWithValue("@role", "Customer");
@@ -60,18 +52,16 @@ namespace Laundry_Service_Management
 
             try
             {
-                connection.Open();
+                Helper.conn.Open();
 
                 int result = cmd.ExecuteNonQuery();
 
                 if (result > 0)
                 {
                     MessageBox.Show("Registration Successful!");
+                    Helper.conn.Close();
 
-                    login frm = new login();
-                    frm.Show();
-
-                    this.Hide();
+                    this.Close();
                 }
                 else
                 {
@@ -81,10 +71,7 @@ namespace Laundry_Service_Management
             catch (Exception)
             {
                 MessageBox.Show("Registration Failed!");
-            }
-            finally
-            {
-                connection.Close();
+                Helper.conn.Close();
             }
         }
 
@@ -95,9 +82,7 @@ namespace Laundry_Service_Management
 
         private void linkLblLogin_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            login frm = new login();
-            frm.Show();
-            this.Hide();
+            this.Close();
         }
     }
 }
