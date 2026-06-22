@@ -162,6 +162,12 @@
     <EmbeddedResource Include="register.resx">
       <DependentUpon>register.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="StaffManagementPage.resx">
+      <DependentUpon>StaffManagementPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewCustomersPage.resx">
+      <DependentUpon>ViewCustomersPage.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="LaundryServiceManagementDbDataSet.xsc">
       <DependentUpon>LaundryServiceManagementDbDataSet.xsd</DependentUpon>
     </None>

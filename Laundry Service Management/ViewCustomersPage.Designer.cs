@@ -31,7 +31,7 @@
             this.titleLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.titleLbl.Location = new System.Drawing.Point(37, 32);
             this.titleLbl.Name = "titleLbl";
-            this.titleLbl.Size = new System.Drawing.Size(166, 25);
+            this.titleLbl.Size = new System.Drawing.Size(169, 25);
             this.titleLbl.TabIndex = 0;
             this.titleLbl.Text = "View Customers";
             // 
@@ -40,7 +40,7 @@
             this.searchLbl.AutoSize = true;
             this.searchLbl.Location = new System.Drawing.Point(39, 79);
             this.searchLbl.Name = "searchLbl";
-            this.searchLbl.Size = new System.Drawing.Size(275, 16);
+            this.searchLbl.Size = new System.Drawing.Size(266, 16);
             this.searchLbl.TabIndex = 1;
             this.searchLbl.Text = "Search by ID/name/gender/phone/join date";
             // 
@@ -81,6 +81,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.AliceBlue;
             this.Controls.Add(this.customersDataGridView);
             this.Controls.Add(this.refreshBtn);
             this.Controls.Add(this.searchTxtBx);
@@ -91,6 +92,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.customersDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
+
         }
 
         #endregion
