@@ -16,6 +16,7 @@ namespace Laundry_Service_Management
             {
                 treeView1.Nodes.RemoveByKey("Dashboard");
                 treeView1.Nodes.RemoveByKey("Staff Management");
+                treeView1.Nodes.RemoveByKey("History payment");
             }
 
             if (Helper.UserRole == "Customer")
@@ -60,6 +61,16 @@ namespace Laundry_Service_Management
                 default:
                     break;
             }
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void mainContentPnl_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

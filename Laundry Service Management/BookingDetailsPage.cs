@@ -278,5 +278,10 @@ namespace Laundry_Service_Management
                 addressTxtBx.Enabled = false;
             }
         }
+
+        private void BookingDetailsPage_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

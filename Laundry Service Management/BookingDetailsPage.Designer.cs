@@ -310,6 +310,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "BookingDetailsPage";
             this.Text = "Book Service";
+            this.Load += new System.EventHandler(this.BookingDetailsPage_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);

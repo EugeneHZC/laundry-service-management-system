@@ -28,14 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Dashboard");
-            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Staff Management");
-            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("View Customers");
-            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("Service");
-            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("Booking");
-            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("History payment");
-            System.Windows.Forms.TreeNode treeNode7 = new System.Windows.Forms.TreeNode("Profile");
-            System.Windows.Forms.TreeNode treeNode8 = new System.Windows.Forms.TreeNode("Logout");
+            System.Windows.Forms.TreeNode treeNode16 = new System.Windows.Forms.TreeNode("Dashboard");
+            System.Windows.Forms.TreeNode treeNode17 = new System.Windows.Forms.TreeNode("Staff Management");
+            System.Windows.Forms.TreeNode treeNode18 = new System.Windows.Forms.TreeNode("Service");
+            System.Windows.Forms.TreeNode treeNode19 = new System.Windows.Forms.TreeNode("Booking");
+            System.Windows.Forms.TreeNode treeNode20 = new System.Windows.Forms.TreeNode("History payment");
             this.treeView1 = new System.Windows.Forms.TreeView();
             this.mainContentPnl = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -84,6 +81,7 @@
             this.mainContentPnl.Name = "mainContentPnl";
             this.mainContentPnl.Size = new System.Drawing.Size(1162, 748);
             this.mainContentPnl.TabIndex = 4;
+            this.mainContentPnl.Paint += new System.Windows.Forms.PaintEventHandler(this.mainContentPnl_Paint);
             // 
             // pictureBox2
             // 
@@ -97,6 +95,7 @@
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 3;
             this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // DesignTemplate
             // 
