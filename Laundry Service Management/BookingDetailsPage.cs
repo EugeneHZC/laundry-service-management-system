@@ -251,6 +251,13 @@ namespace Laundry_Service_Management
                 var bookingId = insertBookingGetId();
                 var total = insertServiceBookingGetTotalAmount(bookingId);
                 updateBookingAmount(bookingId, total);
+                this.Hide();
+                Payment payment = new Payment()
+                {
+                    amount = total,
+                };
+                new PaymentCustomer(payment, bookingId).ShowDialog();
+                this.Show();
                 MessageBox.Show("Booking saved.");
             }
             else

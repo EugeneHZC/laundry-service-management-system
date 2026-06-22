@@ -28,11 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.TreeNode treeNode16 = new System.Windows.Forms.TreeNode("Dashboard");
-            System.Windows.Forms.TreeNode treeNode17 = new System.Windows.Forms.TreeNode("Staff Management");
-            System.Windows.Forms.TreeNode treeNode18 = new System.Windows.Forms.TreeNode("Service");
-            System.Windows.Forms.TreeNode treeNode19 = new System.Windows.Forms.TreeNode("Booking");
-            System.Windows.Forms.TreeNode treeNode20 = new System.Windows.Forms.TreeNode("History payment");
+            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Dashboard");
+            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Staff Management");
+            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("View Customers");
+            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("Service");
+            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("Booking");
+            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("History Payment");
+            System.Windows.Forms.TreeNode treeNode7 = new System.Windows.Forms.TreeNode("Profile");
+            System.Windows.Forms.TreeNode treeNode8 = new System.Windows.Forms.TreeNode("Logout");
             this.treeView1 = new System.Windows.Forms.TreeView();
             this.mainContentPnl = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -55,8 +58,8 @@
             treeNode4.Text = "Service";
             treeNode5.Name = "Booking";
             treeNode5.Text = "Booking";
-            treeNode6.Name = "History payment";
-            treeNode6.Text = "History payment";
+            treeNode6.Name = "History Payment";
+            treeNode6.Text = "History Payment";
             treeNode7.Name = "Profile";
             treeNode7.Text = "Profile";
             treeNode8.Name = "Logout";

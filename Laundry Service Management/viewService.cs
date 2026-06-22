@@ -82,7 +82,7 @@ namespace Laundry_Service_Management
 
         private void servicesDataGridView_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
-            if (e.ColumnIndex == 5)
+            if (e.ColumnIndex == 5 && Helper.UserRole != "Customer")
             {
                 e.Value = "Edit";
             }

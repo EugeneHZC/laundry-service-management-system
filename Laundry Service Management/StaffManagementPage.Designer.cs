@@ -148,7 +148,8 @@
             // 
             // joinDatePicker
             // 
-            this.joinDatePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.joinDatePicker.CustomFormat = "dd/MM/yyyy";
+            this.joinDatePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.joinDatePicker.Location = new System.Drawing.Point(30, 309);
             this.joinDatePicker.Name = "joinDatePicker";
             this.joinDatePicker.Size = new System.Drawing.Size(232, 22);
